@@ -1,0 +1,196 @@
+<% var rating_meaning = ['Awful','Bad','Not-Bad','Good','Great'] %>
+<% var rating_color = ['#B94A48','#D9534F','#ED9C28','#468847', '#5CB85C'] %>
+<% var criteria_arr_caps = ['ON-TIME DELIVERY', 'PRODUCT AS DESCRIBED', 'PRICING', 'PRODUCT VARIETY', 'EASE OF SHOPPING', 'CUSTOMER CARE'] %>
+<% var criteria_arr = ['On-time Delivery', 'Product as Described', 'Pricing', 'Product Variety', 'Ease Of Shopping', 'Customer Care'] %>
+<% var criteria_arr_short = ['otd', 'pad', 'pri', 'pro', 'eos', 'csu'] %>
+
+<!-- Add Shopex Modal -->
+ <div class="modal fade" id="addShopexModal" role="dialog" aria-labelledby="myAddShopexModalLabel" aria-hidden="true">
+  <div class="modal-dialog-addshopex">
+    <div class="modal-content">          
+      <div class="modal-body">
+        <div class="form-group">
+          <form id="wizForm" action="#" class="form-horizontal" >
+            <div class="wizard-form">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>      
+               <div class="wizard-content">
+                <ul class="nav nav-justified steps">
+                 <li class="active">
+                  <a id="add_shopex_step_1" href="#rate-comment" data-toggle="tab" class="wiz-step">
+                  <span class="step-number">1</span>
+                  <span class="step-name"><i class="fa fa-check"></i> Shopping Details</span>   
+                  </a>
+                 </li>
+                  
+                 <li>
+                  <a id="add_shopex_step_2" href="#review" data-toggle="tab" class="wiz-step active">
+                  <span class="step-number">2</span>
+                  <span class="step-name"><i class="fa fa-check"></i> Rate & Review </span>   
+                  </a>
+                 </li>
+
+                </ul>
+                <div id="bar" class="progress progress-striped progress-sm active" role="progressbar">            
+                 <div id="add-shopex-steps-pb" class="progress-bar progress-bar-warning"  role="progressbar" style="width: 50.00%">
+                </div>
+                </div>
+
+                <!-- Individual Tab Content Begin -->
+                <div class="tab-content">
+                 <!-- Alert in case of validation error - Begin -->
+                  <div class="alert alert-danger display-none">
+                    <a class="close" aria-hidden="true" href="#" data-dismiss="alert">×</a>
+                    Your form has errors. Please correct them to proceed.
+                  </div>                     
+
+                  <div class="alert alert-success display-none">
+                    <a class="close" aria-hidden="true" href="#" data-dismiss="alert">×</a>
+                    Your form validation is successful!
+                  </div>
+                  <!-- Alert in case of validation error - Begin -->
+
+                  <!-- First Tab Begin 1 of 3 -->
+                  <div class="add-shopex-modal tab-pane step1 form-group active" id="rate-comment">
+
+                  <h2>Add you shopping experience as <a href="/manmohan-singh"><strong>Manmohan Singh</strong></a> or <span>Anonymous</span></h2>
+                                              
+                    <div class="form-group">
+                    <label class="col-md-offset-1 col-md-3 col-sm-5 control-label">What did you purchase?</label>
+                    <div class="col-md-5 col-sm-6">
+                        <input type="text" style="width:100%;" id="psc_box" class="bigdrop psc_box populate col-md-5 col-sm-6" name="pscategory" placeholder="Product Category (e.g: handbag, books, pen drive etc. " required="" autofocus="">
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="col-md-offset-1 col-md-3 col-sm-5 control-label">Where did you shop?</label>
+                    <div class="col-md-5 col-sm-6">
+                        <input style="width:100%;" class="bigdrop vendor_box populate col-md-5 col-sm-6" id="vendor_box" name="vendor" type="text" placeholder="Online store name (e.g: amazon.in, flipkart.com)">
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="col-md-offset-1 col-md-3 col-sm-5 control-label">Month : </label>
+                    <div class="col-md-2 col-sm-6">
+                        <input class="form-control month_box populate" id="month_box" type="text" placeholder="">
+                    </div>
+                    <label class="col-md-1 col-sm-5 control-label">Year : </label>
+                    <div class="col-md-2 col-sm-6">
+                        <input class="form-control year_box populate" id="year_box" type="text" placeholder="">
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="col-md-offset-1 col-md-3 col-sm-5 control-label">Product Link: </label>
+                    <div class="col-md-5 col-sm-6 prod-link">
+                        <input class="form-control" id="prod-link-input" type="text" placeholder="E.g: http://www.amazon.in/Meluha-Ke-Mritunjay-Immortals-Hindi ">
+                    </div>
+                    <div class="col-md-2 col-sm-2 pr-link add-more add-more-prod-link">
+                        <a href="#"><small>Add more</small></a>
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="col-md-offset-1 col-md-3 col-sm-5 control-label">Delivery Pincode <small>(optional)</small>: </label>
+                    <div class="col-md-2 col-sm-6">
+                        <input class="form-control" id="areacode" type="text" placeholder=" ">
+                    </div>
+                    </div>
+                    
+                  <div class="form-group shopex-detail review">
+                    <h2>How was your most recent online shopping experience? </h2>
+
+                    <div class="comment-box" id="add_shopex_modal_content_text_editable" cols="50" name="comment" placeholder="Your Shopping experience. We appreciate your honest feedback." rows="10"></div>
+                  </div>
+
+                  </div>  <!-- tab 1 -->
+
+
+                <!-- Second Tab Begin 2 of 3 -->
+                <div class="add-shopex-modal tab-pane step2" id="review">
+                  
+                  <h2>Rate your shopping experience</h2>
+                  
+                  <div class="spx-param">
+                    <div class="row">
+                      <div class="container">
+                        <!-- Shopex Add Criteria 1 Begin -->
+
+                        <% for(var i = 0; i < criteria_arr.length; ++i) { %>
+                          <div class="col-sm-10 col-md-3">
+                            <div class="panel panel-info box1">
+                              <div class="panel-heading">
+                                <h3 class="panel-title col-sm-10 col-md-10">
+                                    <%=criteria_arr[i]%>
+                                </h3>
+                                <span>
+                                  <a class="fa fa-question-circle <%=criteria_arr_short[i]%>"></a>
+                                </span>
+
+                              </div>
+                              <div class="panel-body rate-value <%=criteria_arr_short[i]%>">
+                                <h1 id="<%=criteria_arr_short[i]%>_rating">N/A</h1>
+
+                              <thead>
+                                <tr>                        
+                                  <th><span class="rate-awful pull-left"><small>AWFUL</small></span> <span class="rate-great pull-right"><small>GREAT</small></span></th>
+                                  <th></th>                        
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th>
+                                    <div class="slider slider-horizontal"></div>
+                                  </th>
+                                </tr>
+                              </tbody>                            
+
+                              </div>
+                              <div class="comment-box">
+                                <textarea class="counted1 <%=criteria_arr_short[i]%>" id="<%=criteria_arr_short[i]%>_comment" cols="50" name="comment" placeholder="Comment on packing and on-time delivery of your order." rows="2"></textarea>
+                                <h6 class="pull-right" id="counter1">320 characters remaining</h6>
+                              </div>
+                            </div>
+                          </div>
+                        <% } %>
+                        <!-- Shopex Add Criteria 1 End -->
+
+                        <!-- Shopex Add Criteria 7 Begin -->
+                        <div class="col-xs-10"></div>
+                        <!-- Shopex Add Criteria 7 End -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                    
+                <!-- Second Tab 2 of 3 End -->
+                
+                </div>
+
+                <!-- Individual Tab Content End -->
+
+               </div>
+
+               <div class="wizard-buttons">
+                <div class="row">
+                 <div class="col-md-12 col-sm-12">
+                  <div class="col-md-12 col-sm-12">
+                     <a href="#" class="btn btn-default prevBtn pull-left hidden">
+                    <i class="fa fa-arrow-circle-left"></i> Back 
+                     </a>
+                     <a href="#" class="btn btn-default nextBtn pull-right">
+                    Next <i class="fa fa-arrow-circle-right"></i>
+                     </a>
+                     <a href="#" class="btn btn-success submitBtn pull-right hidden">
+                    Submit <i class="fa fa-arrow-circle-right"></i>
+                     </a>                            
+                  </div>
+                 </div>
+                </div>
+               </div>
+            </div>
+          </form>              
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- /.modal -->

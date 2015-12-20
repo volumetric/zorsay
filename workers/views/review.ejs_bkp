@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include head_meta.ejs %>
+
+  <head>
+    <title Password Reset | Zorsay="Shopping Experience Page | Zorsay"></title>
+    <link href="/css/some.css" rel="stylesheet"/>
+    <link href="/css/style.css" rel="stylesheet">
+  </head>
+
+
+  <body>
+
+    <div id="content" style="height: 400px;  position: relative;">
+
+    <%- include navbar.ejs %>
+  <div class="container">
+
+      <br>
+      <div class="review_single">
+      <div class="panel panel-default" style="margin-bottom: 10px;">
+      <div class="panel-body" style="width: 760px;">
+      <div class="row">
+        <div class="col-md-10">
+          <!-- <h5 style="text-align: left;"><span class="label label-primary">Arun Anto</span> has written a shopping experience for <span class="label label-default">flipkart.com</span></h5> -->
+
+          <h5 style="text-align: left;">Shopping experience with <span class="label label-primary"><% if (typeof(vendor) != "undefined") {  %><%= vendor %><% } %></span> for buying <span class="label label-default"><% if (typeof(pscategory) != "undefined") {  %><%= pscategory %><% } %></span></h5>
+        </div>
+        
+        <div class="col-md-2" style="float: right;">
+          <h5 style="text-align: right; font-size: 20px;">
+            <span class="label label-default">
+              <% if ((typeof(all_rating) != "undefined") && (all_rating != 0)) { all_rating_dec = ((all_rating*10)%10 == 0) ? String(all_rating)+'.0' : Math.round(all_rating*10)/10; %>
+                <!-- <%= all_rating %> -->
+                <%= all_rating_dec %>
+              <% } else { %>
+                N/A
+              <% } %>
+            </span>
+          </h5>
+        </div>
+
+      <% if ( ((typeof(otd_comment) != "undefined") && (otd_comment.length > 0)) || ((typeof(otd_rating) != "undefined") && (otd_rating > 0)) ||    ((typeof(pad_comment) != "undefined") && (pad_comment.length > 0)) || ((typeof(pad_rating) != "undefined") && (pad_rating > 0)) ||    ((typeof(pri_comment) != "undefined") && (pri_comment.length > 0)) || ((typeof(pri_rating) != "undefined") && (pri_rating > 0)) ||    ((typeof(pro_comment) != "undefined") && (pro_comment.length > 0)) || ((typeof(pro_rating) != "undefined") && (pro_rating > 0)) ||    ((typeof(eos_comment) != "undefined") && (eos_comment.length > 0)) || ((typeof(eos_rating) != "undefined") && (eos_rating > 0)) ||    ((typeof(csu_comment) != "undefined") && (csu_comment.length > 0)) || ((typeof(csu_rating) != "undefined") && (csu_rating > 0)) ||    ((typeof(rrp_comment) != "undefined") && (rrp_comment.length > 0)) || ((typeof(rrp_rating) != "undefined") && (rrp_rating > 0))      ) {  %>
+
+        <div class="col-md-3">
+          <h5 style="text-align: left; font-weight: bold;">Criteria</h5>                    
+        </div>
+        <div class="col-md-6">
+          <h5 style="text-align: left; font-weight: bold;">Comments</h5>
+        </div>
+        <div class="col-md-3">
+           <h5 style="text-align: right; font-weight: bold;">Rating</h5>
+        </div>
+
+      <% } %> 
+
+        <div class="overall"></div>
+        <div class="col-xs-12">
+          <div class="zs-feed">                                    
+            <ul class="list-unstyled user-review-structured">
+
+              <% if ( ((typeof(otd_comment) != "undefined") && (otd_comment.length > 0)) || ((typeof(otd_rating) != "undefined") && (otd_rating > 0)) ) {  %>
+                <li>
+                  <span class="user-criteria">On-Time Delivery</span>
+                  
+                  <% if (otd_comment.length > 0) {  %>
+                    <span class="user-criteria-comment"><%= otd_comment %></span>
+                  <% } else {%>
+                    <span class="user-criteria-comment"><i>No Comments</i></span>
+                  <% } %>
+
+                  <% if (otd_rating > 0) {  %>
+                    <span class="user-criteria-rating"><%= otd_rating %>.0</span>
+                  <% } else {%>
+                    <span class="user-criteria-rating">n/a</span>
+                  <% } %>
+                </li>
+              <% } %>
+
+              <% if ( ((typeof(pad_comment) != "undefined") && (pad_comment.length > 0)) || ((typeof(pad_rating) != "undefined") && (pad_rating > 0)) ) {  %>
+                <li>
+                  <span class="user-criteria">Product as described</span>
+                  
+                  <% if (pad_comment.length > 0) {  %>
+                    <span class="user-criteria-comment"><%= pad_comment %></span>
+                  <% } else {%>
+                    <span class="user-criteria-comment"><i>No Comments</i></span>
+                  <% } %>
+
+                  <% if (pad_rating > 0) {  %>
+                    <span class="user-criteria-rating"><%= pad_rating %>.0</span>
+                  <% } else {%>
+                    <span class="user-criteria-rating">n/a</span>
+                  <% } %>
+                </li>
+              <% } %>
+
+              <% if ( ((typeof(pri_comment) != "undefined") && (pri_comment.length > 0)) || ((typeof(pri_rating) != "undefined") && (pri_rating > 0)) ) {  %>
+                <li>
+                  <span class="user-criteria">Pricing</span>
+                  
+                  <% if (pri_comment.length > 0) {  %>
+                    <span class="user-criteria-comment"><%= pri_comment %></span>
+                  <% } else {%>
+                    <span class="user-criteria-comment"><i>No Comments</i></span>
+                  <% } %>
+
+                  <% if (pri_rating > 0) {  %>
+                    <span class="user-criteria-rating"><%= pri_rating %>.0</span>
+                  <% } else {%>
+                    <span class="user-criteria-rating">n/a</span>
+                  <% } %>
+                </li>
+              <% } %>
+
+              <% if ( ((typeof(pro_comment) != "undefined") && (pro_comment.length > 0)) || ((typeof(pro_rating) != "undefined") && (pro_rating > 0)) ) {  %>
+                <li>
+                  <span class="user-criteria">Product Variety</span>
+                  
+                  <% if (pro_comment.length > 0) {  %>
+                    <span class="user-criteria-comment"><%= pro_comment %></span>
+                  <% } else {%>
+                    <span class="user-criteria-comment"><i>No Comments</i></span>
+                  <% } %>
+
+                  <% if (pro_rating > 0) {  %>
+                    <span class="user-criteria-rating"><%= pro_rating %>.0</span>
+                  <% } else {%>
+                    <span class="user-criteria-rating">n/a</span>
+                  <% } %>
+                </li>
+              <% } %>
+
+              <% if ( ((typeof(eos_comment) != "undefined") && (eos_comment.length > 0)) || ((typeof(eos_rating) != "undefined") && (eos_rating > 0)) ) {  %>
+                <li>
+                  <span class="user-criteria">Ease of Shopping</span>
+                  
+                  <% if (eos_comment.length > 0) {  %>
+                    <span class="user-criteria-comment"><%= eos_comment %></span>
+                  <% } else {%>
+                    <span class="user-criteria-comment"><i>No Comments</i></span>
+                  <% } %>
+
+                  <% if (eos_rating > 0) {  %>
+                    <span class="user-criteria-rating"><%= eos_rating %>.0</span>
+                  <% } else {%>
+                    <span class="user-criteria-rating">n/a</span>
+                  <% } %>
+                </li>
+              <% } %>
+
+              <% if ( ((typeof(csu_comment) != "undefined") && (csu_comment.length > 0)) || ((typeof(csu_rating) != "undefined") && (csu_rating > 0)) ) {  %>
+                <li>
+                  <span class="user-criteria">Customer Care</span>
+                  
+                  <% if (csu_comment.length > 0) {  %>
+                    <span class="user-criteria-comment"><%= csu_comment %></span>
+                  <% } else {%>
+                    <span class="user-criteria-comment"><i>No Comments</i></span>
+                  <% } %>
+
+                  <% if (csu_rating > 0) {  %>
+                    <span class="user-criteria-rating"><%= csu_rating %>.0</span>
+                  <% } else {%>
+                    <span class="user-criteria-rating">n/a</span>
+                  <% } %>
+                </li>
+              <% } %>
+
+              <% if ( ((typeof(rrp_comment) != "undefined") && (rrp_comment.length > 0)) || ((typeof(rrp_rating) != "undefined") && (rrp_rating > 0)) ) {  %>
+                <li>
+                  <span class="user-criteria">Return & Refund Service</span>
+                  
+                  <% if (rrp_comment.length > 0) {  %>
+                    <span class="user-criteria-comment"><%= rrp_comment %></span>
+                  <% } else {%>
+                    <span class="user-criteria-comment"><i>No Comments</i></span>
+                  <% } %>
+
+                  <% if (rrp_rating > 0) {  %>
+                    <span class="user-criteria-rating"><%= rrp_rating %>.0</span>
+                  <% } else {%>
+                    <span class="user-criteria-rating">n/a</span>
+                  <% } %>
+                </li>
+              <% } %>
+
+            </ul>                                           
+          </div>    
+        </div>
+
+        <div class="col-md-12">
+          <h5 style="text-align: left; font-weight: bold;">Detailed Shopping Experience</h5>          
+          <div class="overall"></div>
+          <p><%= reviewText %></p>
+        </div>
+        <br>
+        <br>
+      <!--   <div class="col-md-2" style="margin: 15px auto;">
+          <button type="button" class="btn btn-default btn-sm">Mark as Helpful</button>
+        </div> -->  
+        <div class="overall"></div>
+      </div> <!-- row -->
+      </div> <!-- panel-body -->
+      </div> <!-- panel panel-default -->
+      </div> <!-- review_single -->
+
+      <div class="zs-fcontainer">
+        <%- include footer.ejs %>
+      </div>
+
+    </div>
+    </div>
+  </body>
+</html>

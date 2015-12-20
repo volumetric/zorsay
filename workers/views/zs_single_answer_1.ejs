@@ -1,0 +1,45 @@
+<% if(answer_data._question) {question_data = answer_data._question} %>
+<!-- Single Question page main column Begin -->
+<section id="main-content" class="panel col-md-9 col-sm-12 col-xs-12">
+
+  <!-- Single QNA Title and Rating summary Begin -->
+  <div class="post-div question-div" id="Question_<%=question_data._id%>" post="question">
+    <!-- Single Question Title Begin -->
+    <section id="qna-title">  
+      <!-- #DESIGN_CHANGE BEGIN -->
+      <!-- <div class="row" style="border-bottom: 0px;"> -->
+      <div class="row" style="border-bottom: 0px;">
+      <!-- #DESIGN_CHANGE END -->
+        <div class="tqna-title">
+          <div class="col-xs-12">
+            <h3 class="panel-title question_title_edit_content" key="content_title">
+              <a href="<%=question_data.permalink%>"><strong><%=question_data.content_title%></strong></a>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Single Question Title End -->
+  </div>
+  <!-- <div class="post-div question-div" id="Question_x"> END -->
+
+  
+    <!-- ANSWER List begin -->
+    <a href="<%=question_data.permalink%>">
+    <h3><span><%= question_data._answers.length %></span> Answers</h3>
+    </a>
+
+    <!-- First Answer Begin -->
+    <%- rendered_include('views/zs_single_answer.ejs', {
+          answer_data: answer_data,
+          user_info: user_info,
+          loggedIn: loggedIn,
+          page_info: page_info,
+          }) %>
+    <!-- First Answer End -->
+
+  <!-- ANSWER List End -->
+</section>
+<!-- Single Question page main column End -->
+
+

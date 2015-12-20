@@ -1,0 +1,113 @@
+<% var ud = user_data %>
+<% char_overflow = 574 %>
+<% if(ud) { %>
+
+<% content_short_bio = ud.short_bio ? ud.short_bio : "" %>
+<% content_plain_text = ud.aboutme ? ud.aboutme.replace(/<(?:.|\n)*?>/gm, ' ') : "" %>
+
+<!-- question short begin -->
+<div class="content-wrap user_short post-div post-short" id="User_<%= ud._id %>" post="user" num="<%= ud._id %>">
+  
+  <% if(ud) { %>
+    <a target="_blank" href="<%= ud.permalink ? ud.permalink : "/user/"+ud._id+"/"+ud.url_name %>">
+      <div class="usr_profile_img_list_container_25">
+        <img class="profile-img-list" src="<%= ud.img_icon_url %>" alt="<%= ud.fullname %>">
+      </div>
+    </a>  
+  <% } else { %>
+    <div class="usr_profile_img_list_container_25">
+      <img class="profile-img-list" src="/img/anonuser.jpg" alt="Anonymous">
+    </div>
+  <% } %>
+
+  <div class="panel col-md-11 col-sm-11 col-xs-10">
+    
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <!-- <a href="/wed"> -->
+        <!-- <strong> -->
+          
+          <a target="_blank" href="<%= ud.permalink ? ud.permalink : "/user/"+ud._id+"/"+ud.url_name %>">
+            <span class="question_short_title">
+              <%= ud.fullname %>
+            </span>
+          </a>
+
+          <% if(ud.email) { %>
+             <span>
+              (<%= ud.email %>) </small>
+            </span>
+          <% } %>
+
+          <% if(ud.location) { %>
+            <!-- <a href="#"> -->
+              <span class="link link-location">
+                <small> from <%= ud.location %> </small> <!-- #TODO#DONE put location data -->
+              </span>
+            <!-- </a> -->
+          <% } %>
+
+          <% if(ud.email.substring(0, 13) == 'xxtestemailxx' || ud._id == user_info.admin_id) { %>
+            <a href="/switch/user/<%=ud._id%>">SWITCH</a>
+          <% } %>
+          
+        <!-- </strong> -->
+        <!-- </a> -->
+    </h3>                   
+    </div>
+    
+
+    <% if (content_plain_text.replace(/\s/g,'').length > 0) { %>
+      <div class="panel-body">    
+        <p>
+          <!-- <a class="question_short_body" target="_blank" href="<%= ud.permalink ? ud.permalink : "/user/"+ud._id %>"> -->
+          <a class="question_short_body">
+            <!-- <br> -->
+            <b><%= content_short_bio %></b>
+            <br>
+            <%- content_plain_text %>
+          </a>
+        </p>
+      </div>
+    <% } %>
+
+    
+    <div class="row allqn-footer hidden">
+      <!-- <span><a>Follow</a></span> -->
+      <span>
+        <!-- if the post is alrady thanked by the user -->
+        <% if (loggedIn && ud.meta_info.followers.indexOf(user_info._id) > -1) { %>
+          <a href="#" class="zs_post_follow following">Following</a>
+        <% } else { %>
+          <a href="#" class="zs_post_follow follow">Follow</a>
+        <% } %>
+      <span>(<%= ud.meta_info.followers ? ud.meta_info.followers.length : 0 %>)</span>
+      </span>
+
+
+      <span class="zs_toggle_comments hidden"><a href="#">Comment</a><span>(<%= ud._comments.length %>)</span></span>
+      <span class="hidden"><a>Share</a></span>
+      <!-- <span class="date"><%= ud.created_at.toDateString() %></span> -->
+      
+      <span id="permalink" class="date hidden">
+        <a target="_blank" href= 
+        <% if(ud.permalink) { %> 
+          "<%= ud.permalink %>" 
+        <% } else { %> 
+          "<%= "/user/"+ud._id+"/"+ud.url_name %>" 
+        <% } %> style="font-size: 1em;">
+          <%= formatTime(ud.created_at) %>
+        </a>
+      </span>
+
+    </div>
+
+    <section id="comment-container">
+      <div class="comment-container-wrap"></div>
+    </section>
+
+
+  </div>
+</div>
+<% } %>
+<!-- question short end -->

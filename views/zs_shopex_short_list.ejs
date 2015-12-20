@@ -1,0 +1,9 @@
+<%/* console.log(shopex_list_data) */%>
+<% for(var i = 0; i < shopex_list_data.length; ++i) { %>
+	<!-- shopex short begin -->
+	<%- rendered_include('views/zs_shopex_short.ejs', {shopex_data: shopex_list_data[i], 
+		user_info: user_info,
+		loggedIn: loggedIn,
+		}) %>
+	<!-- shopex short end -->
+<% } %>

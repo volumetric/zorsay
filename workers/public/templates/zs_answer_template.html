@@ -1,0 +1,94 @@
+<%
+var formatTime = function(t) {
+  var ft = "permalink";
+  if (t) {
+    if (typeof(t) == 'object') {
+      var tt = t.toDateString().split(" ");
+      ft = tt[1] +" "+ tt[2];
+    } else {
+      var tt = new Date(t);
+      if(JSON.stringify(tt)){
+        tt = tt.toDateString().split(" ");
+        ft = tt[1] +" "+ tt[2];
+      }
+    }
+  }
+  return ft;
+}
+%>
+
+  <div id="Answer_<%=answer_data._id%>" class="post-div single-ans col-md-12" post="answer">
+    <!-- User Promote Inputs for QNA Begin -->
+    <div class="col-xs-1">
+        <div class="ans-userprofile">
+          <a href="#">
+            <div class="usr_profile_img_container_40">
+              <img class="media-object" alt="User Name displays here" src="<%= answer_data._author.img_icon_url %>">
+            </div>
+          </a>
+        </div>
+        <div class="user-vote">
+          <input type="hidden">
+            <!-- <a class="<%/* if (user_info && answer_data.meta_info.upvoters.indexOf(user_info._id) > -1) { */%> vote-up-on <%/* } else { */%> vote-up-off <%/* } */%> zs_post_upvote" href="#" title="Upvote! This is a useful question." ><span class="fa fa-caret-square-o-up fa-2x"></span> -->
+            <a class="vote-up-on zs_post_upvote" href="#" title="Upvote! This is a useful question." ><span class="fa fa-caret-square-o-up fa-2x"></span>
+            </a>
+            <li class="list-unstyled zs_post_votecount"><%= answer_data.meta_info.upvoters.length - answer_data.meta_info.downvoters.length %></li>
+            <!-- <a class="<%/* if (user_info && answer_data.meta_info.downvoters.indexOf(user_info._id) > -1) { */%> vote-down-on <%/* } else { */%> vote-down-off <%/* } */%> zs_post_downvote" href="#" title="Down-vote. This question is ambigous." ><span class="fa fa-caret-square-o-down fa-2x"></span> -->
+            <a class="vote-down-off zs_post_downvote" href="#" title="Down-vote. This question is ambigous." ><span class="fa fa-caret-square-o-down fa-2x"></span>
+            </a> 
+        </div>                  
+    </div>
+    <!-- User Promote Inputs for QNA end -->
+
+    <!-- Answer Details Begin-->  
+    <div class="col-xs-11">
+      <div class="adesc-wrap">                    
+        <div class="panel adesc-wrap-1 col-md-12">
+          <div class="profile-wrap ans-full">
+            <a class="auser" href="/user/<%= answer_data._author._id +"/"+ answer_data._author.url_name %>"> <%= answer_data._author.fullname %></a>
+            <% var level = ["Member", "Trusted User", "Influencer"] %>
+            <p><%= level[answer_data._author.level] %></p>                           
+            <!-- <a class="ans-check-off" href="#" title="This answer is the appropriate response to the question"><span class="fa fa-check fa-2x"></span></a> -->
+
+          </div>
+          <div class="panel-body answer_edit_content" key="content_text">
+            <%= answer_data.content_text %>
+          </div>
+        </div>
+        <!-- Descriptive Answer End-->
+     
+        <!-- qna desc footer - comment/share/report Begin -->
+        <div class="row ans-footer">
+           <span class="zs_toggle_comments"><a href="#">Comment</a><span>(<%= answer_data._comments ? answer_data._comments.length : 0 %>)</span></span>
+           <span><a href="#" class="zs_post_report hidden">Report</a></span>
+           <span><a href="#" class="zs_post_share">Share</a><span>(<%= answer_data.meta_info ? answer_data.meta_info.sharers.length : 0 %>)</span></span>
+           <!-- <span id="edit"><a>Edit</a></span> -->
+           <span id="answer_edit" class="edit"><a>Edit</a></span>
+           
+          <span id="permalink" class="permalink date">
+            <a target="_blank" href="<%= "/answer/"+answer_data._id %>" style="font-size: 0.9em;"><%= formatTime(answer_data.created_at) %>
+            </a>
+          </span>
+
+          <span id="answer_delete" class="edit delete pull-right"><a>Delete</a>
+
+        </div>
+        <!-- qna desc footer - comment/share/report End -->
+
+        <!-- Answer comments Begin -->
+          <section id="comment-container">
+            <div class="comment-container-wrap">
+              <!-- comment_container_data { user_info, comments } -->
+              <!-- Threaded Comment Begin -->
+              
+              <% /*The comments needs to be lazily loaded and rendered when the comment link is clicked, same for the question*/ %>
+              <%/*- rendered_include('views/zs_comment_container.ejs', {comment_container_data: {user_info: user_info, comments: answer_data._comments}})*/ %>
+
+              <!-- Threaded Comment End -->
+            </div>
+          </section>
+        <!-- Answer comments End -->
+      </div>
+    </div>
+    <!-- Answer Details End -->
+  </div>

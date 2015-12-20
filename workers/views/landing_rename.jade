@@ -1,0 +1,63 @@
+extends layout
+
+block content
+    body
+    .navbar.navbar-masthead.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container
+        //
+           <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project name</a>          
+                  </div> 
+        .navbar-collapse.collapse
+          img#softlaunch(title='Soft Launch', src='images/SL.png')
+          form.navbar-form.navbar-right(role='form')
+            .form-group
+              input.form-control(type='text', placeholder='Email')
+            .form-group
+              input.form-control(type='password', placeholder='Password')
+            button.btn.btn-success(type='submit') Sign in
+            a(href='zs_needhelp.html') Need help?
+            div
+              label.checkbox
+                input(type='checkbox')
+                | Keep me logged in
+        // /.navbar-collapse
+    // Main jumbotron for a primary marketing message or call to action
+    .zsl-jumbotron
+      .zsl-container
+        h1
+          span
+            img#zorsay-sl-logo(title='zorsay', src='images/zorsay-wsl.png')
+        .overall
+        h2 This is where you say it.
+        h4
+          | Zorsay is the fun and easy way to help you discover, rate and talk about your online shopping experience. The purpose for the soft launch is to learn from you, listen to you and work with you towards our mission to best understand and satisfy the needs of Online buyers in India.
+        .zs-row
+          .zs-col-lg-6
+          	div#content
+            .input-group
+              input.form-control(type='text', placeholder='Email address')
+              span.input-group-btn
+                a.btn.btn-success(href='zs_signup.html', role='button', type='button') Sign Up!
+            // /input-group
+          // /.col-lg-6
+        // /.row
+      footer
+        .zs-footer
+          span.links
+            a.btn.btn-primary.btn-sm(href='#', role='button') Contact Us
+            a.btn.btn-primary.btn-sm(href='#', role='button') Our Story
+          span.icons
+            a(target='_blank', href='#')
+              img(width='32', height='32', src='images/icon_facebook_32.png', alt='f')
+            a(target='_blank', href='#')
+              img(width='32', height='32', src='images/icon_twitter_32.png', alt='t')
+  
+block scripts
+  script(data-main='js/boot', type='text/javascript',src='/js/libs/require.js')

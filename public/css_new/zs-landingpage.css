@@ -1,0 +1,260 @@
+/* move special fonts to HTML head for better performance */
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600,700');
+
+
+/* custom template */
+html, body {
+   height: 100%;
+   /*font-family:'Open Sans',arial,sans-serif;*/
+}
+
+a {
+  color:#222222;
+}
+
+.wrapper, .row {
+   height: 100%;
+   margin-left:0;
+   margin-right:0;
+}
+
+.wrapper:before, .wrapper:after,
+.column:before, .column:after {
+    content: "";
+    display: table;
+}
+
+.wrapper:after,
+.column:after {
+    clear: both;
+}
+
+.column {
+    height: 100%;
+    overflow: auto;
+    *zoom:1;
+}
+
+.column .padding {
+    padding: 20px;
+}
+
+.box {
+  	bottom: 0; /* increase for footer use */
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image:url('/img/zs-landing-bg02.jpg');    
+    background-size:cover;
+    background-attachment:fixed;
+}
+
+.divider {
+	margin-top:32px;
+}
+
+#main {
+    background-color:#fefefe;
+}
+#main .img-circle {
+  margin-top:18px;
+  height:70px;
+  width:70px;
+}
+
+#sidebar, #sidebar a {
+    color:#ffffff;
+    background-color:transparent;
+	text-shadow:1px 0 1px #888888;
+}
+#sidebar a.logo {
+  font-family: 'Open Sans', sans-serif;
+  display:block;
+  padding:1px;
+  background-color:#337294; /*428bca;*/
+  color:#fff;
+  height:50px;
+  width:50px;
+  margin:15px;
+  margin-top: 50px;
+  font-size:2.5em;
+  font-weight:800;
+  letter-spacing: 1.1px;
+  text-align:center;
+  text-decoration:none;
+  text-shadow:0 0 0;
+}
+#sidebar ul > li a{
+  font-size: 0.95em;
+  text-shadow: 2px 2px 2px #333;
+  letter-spacing: 0.09em;
+}
+#sidebar ul > li a:hover{
+  text-decoration: underline;
+}
+
+#sidebar-footer li {  
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size:1em;
+  color: #F0F0F0;
+  margin-bottom: 20px;
+}
+
+#sidebar-footer h4{
+  margin-bottom: -15px;
+}
+
+#sidebar-footer {
+  position:absolute;bottom:5px;
+}
+#footer {
+  margin-bottom:20px;
+}
+
+/* center and adjust the sidebar contents on smaller devices */
+@media (max-width: 768px) {
+  #sidebar,#sidebar a.logo {
+    text-align:center;
+    margin:0 auto;
+    margin-top:30px;
+    font-size:26px;
+  }
+  #sidebar a.logo {
+    font-size:50px;
+    height:75px;
+    width:75px;
+    margin-bottom:30px;
+  }
+}
+
+
+/* bootstrap overrides */
+
+/*h1,h2,h3 {
+   font-weight:800;
+   font-family:'Open Sans',arial,sans-serif;
+}*/
+
+.jumbotron {
+  background-color:transparent;
+}
+.label-default {
+  background-color:#dddddd;
+}
+.page-header {
+  margin-top: 55px;
+  padding-top: 9px;
+  border-top:1px solid #eeeeee;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.teaser{  
+  margin-top: 60px;
+  
+}
+
+.teaser-detail{
+  margin-top: 15px;
+}
+
+.teaser-detail p{  
+  font-weight: 300; 
+  font-size: 1.2em;
+}
+
+
+.col-sm-9.full {
+    width: 100%;
+}
+
+.teaser-detail .explore {
+width: 23.8em;
+color: #fff;
+margin-top: 20px;
+}
+
+.teaser-qns {
+width: 20.2em;
+margin-top: 10px;
+display: inline-block;
+margin-right: 20px;
+border:1px solid #DDD;
+}
+
+.teaser-qns a{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300px;
+  font-size: 1.0em;
+  display: inline-block;
+  padding: 5px;
+}
+
+.teaser-spx {
+  display: inline-block;
+  width: 20em;
+  margin-top: 10px;
+  border:1px solid #DDD;
+}
+
+.teaser-spx a{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300px;
+  font-size: 1.0em;
+  display: inline-block;
+  padding: 5px;
+}
+
+
+.teaser-detail a{
+  margin-right: 15px;  
+  display: inline-block;
+}
+
+.qnbutton {
+/*display: block;*/
+border: 1px solid #1C64D9;
+font-weight: 400;
+font-size: 1em;
+color: #404040;
+text-align: center;
+background-color: #4986E7;
+}
+
+.spxbutton{
+display: block;
+border: 1px solid #107E4D;
+font-weight: 400;
+font-size: 1em;
+color: #404040;
+text-align: center;
+background-color: #16A765;
+}
+
+.explore {
+padding: .5em 2em;
+text-transform: uppercase;
+font-size: .85em;
+letter-spacing: 1px;
+}
+
+.qnbutton:hover {
+text-decoration: none;
+color: #fff;
+border-color: #1C64D9;
+background-color: #1C64D9;
+}
+
+.spxbutton:hover {
+text-decoration: none;
+color: #fff;
+border-color: #107E4D;
+background-color: #107E4D;
+}
+
+small.text-muted {
+  font-family:courier,courier-new,monospace;
+}

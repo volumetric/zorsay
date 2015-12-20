@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include zs_head_meta.ejs %>
+  <%- include zs_external_scripts %>
+
+  <% var lpd = landing_page_data %>
+
+  <% var title_str = "Share Your Experiences, Ask Questions and Read Answers about Online Shopping in India"; %>
+  <% var authors_list_str = ""; %>
+  <% var description_str = site_message; %>
+  <% var keywords_list_str = ""; %>
+  <% var share_image = ""; %>
+
+  <% 
+    var share_default_image = share_default_square_image;
+  %>
+
+  <%
+    var authors_list_arr = []
+    authors_list_arr = authors_list_arr.concat(site_authors);
+    authors_list_str = makeStr(authors_list_arr);
+  %>
+
+  <%
+    var keywords_list_arr = ["Online Shopping", "Questions", "Answers", "Shopping Experience", "Reviews", "Online Shopping Questions", "Online Shopping Queries", "Online Shopping Problems", "Shopping Questions", "Shopping Queries", "Shopping Problems", "Online Shopping Experiences", "Online Shopping Reviews", "Online Shopping Feedback", "Shopping Experiences", "Shopping Reviews", "Shopping Feedback"];
+    keywords_list_arr = keywords_list_arr.concat(authors_list_arr);
+    keywords_list_str = makeStr(keywords_list_arr);
+  %>
+  
+  <head>
+    <link href="/css_new/zs-landingpage.css" rel="stylesheet">
+    <title> Zorsay - <%= title_str %> </title>
+
+    <meta name="keywords" content="<%= keywords_list_str %>">
+    <meta name="description" content="<%= description_str %>">
+    <meta name="author" content="<%= authors_list_str %>">
+    <link rel="canonical" href="<%=site_host%>">
+
+    <meta property="og:title" content="<%= title_str %>"/><!-- 95 chars -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="<%= share_image %>"/>
+    <!-- specify a square image to ensure the best visibility -->
+    <meta property="og:url" content="<%=site_host%>"/>
+    <meta property="og:description" content="<%= description_str %>"/><!-- 297 chars-->
+    
+    <meta property="fb:admins" content="683593457,674922635874976"/>
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="<%=site_host%>">
+    <meta name="twitter:title" content="<%= title_str %>"><!-- 70 chars -->
+    <meta name="twitter:description" content="<%= description_str %>"><!-- 200 chars -->
+    <meta name="twitter:image" content="<%= share_image %>">
+    <!-- specify a square image no smaller than 60×60 pixels -->
+    <meta name="twitter:domain" content="zorsay.com">
+  </head>
+
+  <body>
+    <!-- Notification on Page Begin -->
+    <%- include zs_global_notification.ejs %>
+    <!-- Notification on Page Ends -->
+
+    <!-- ZS Fixed navbar begin -->
+    <%- rendered_include('views/zs_navbar.ejs', {navbar_data : {}}) %>
+    <!-- ZS Fixed navbar end -->
+
+    <div class="wrapper">
+      <div class="box">
+        <div class="row">
+          <!-- sidebar -->
+          <div class="column col-sm-6" id="sidebar">
+              <a class="logo" href="/">ZS</a>
+              <ul class="nav">
+                  <li>
+                    <a href="/questions/recent"> QUESTIONS & ANSWERS</a>
+                  </li>
+                  <li><a href="/shopping-experiences/recent"> SHOPPING EXPERIENCES</a>
+                  </li>
+              </ul>
+              <ul class="nav hidden-xs" id="sidebar-footer">
+                  <li>
+                    <h4>Zorsay.com</h4> 
+                    <br>
+                    <i class="glyphicon glyphicon-heart-empty"></i> se banaya hai!
+                  </li>
+              </ul>
+          </div>
+          <!-- /sidebar -->
+            
+          <!-- main -->
+          <div class="column col-sm-6" id="main">
+            <div class="padding">
+              <div class="full col-sm-9">
+                <!-- content -->
+                <div class="col-sm-12">   
+                  <div class="teaser">
+                    <img src="/img/zs-logob-beta.png" class="img-responsive" alt="Zorsay.com">
+                  </div>
+                  <div class="teaser-detail">    
+                    <p>Welcome !</p>
+                    <p><%= site_message %></p>
+                    <p>Please <a href="#" class="registerModalLink" style="margin: 0;background-color: green;color: white;text-decoration: none;border-radius: 4px;padding-top: 1px;padding-bottom: 1px;padding-left: 5px;padding-right: 7px;">Signup</a> to Begin:</p>         
+                    
+                    <a href="/questions/recent" id="readmore" class="qnbutton explore">Questions & Answers → </a>
+                    
+                    <a href="/shopping-experiences/recent" id="readmore" class="spxbutton explore">Shopping Experiences → </a>
+                    
+                    <div class="row">
+                      <div class="teaser-qns col-md-6 col-sm-6 col-xs-6">
+                        <% for(var i = 0; i < lpd.top_questions.length; ++i) { %>
+                          <a href="<%= lpd.top_questions[i].permalink %>" target="_blank" class="col-xs-12 question_short_title"><%= lpd.top_questions[i].content_title %></a>
+                        <% } %>
+                      </div>
+
+                      <div class="teaser-spx col-md-6 col-sm-6 col-xs-6">
+                        <% for(var i = 0; i < lpd.top_shopexes.length; ++i) { %>
+                          <a href="<%= lpd.top_shopexes[i].permalink ? lpd.top_shopexes[i].permalink : "/shopping-experience/" + lpd.top_shopexes[i]._id %>" target="_blank" class="col-xs-12 question_short_title"><%= lpd.top_shopexes[i].content_title %></a>
+                        <% } %>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>                           
+              </div><!-- /col-9 -->
+            </div><!-- /padding -->
+          </div>
+          <!-- /main -->
+        </div>
+      </div>
+    </div>
+
+    <!-- start loading and running the scripts -->
+    <script data-main="/js/zs_landing_page" type="text/javascript" src="/js/libs/require.js"></script>
+
+  </body>
+</html>

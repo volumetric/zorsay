@@ -1,0 +1,89 @@
+<%// console.log("llllllllllllllllllllllllllll") %>
+<%// console.log(comment_data) %>
+<%// console.log("llllllllllllllllllllllllllll") %>
+<%// if(typeof(comment_data._author) == 'object') { %>
+<%// console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm") %>
+
+<a href="/comment/<%= comment_data._id %>">
+<!-- <a href="#"> -->
+  <%// console.log(comment_data) %>
+  <% if(typeof(comment_data._author) == 'object') { %>
+    <% console.log(comment_data._author) %>
+    <img class="profile-img comment-img" src="<%= comment_data._author.img_icon_url %>" alt="<%= comment_data._author.name.first %> <%= comment_data._author.name.last %>">
+  <% } else { %>
+    <img class="profile-img comment-img" src="/img/newuser.jpg" alt="<%= comment_data._author %>">
+  <% } %>
+</a>
+
+<a class="comment-upvoteoff" action"" href=""><span class="glyphicon glyphicon-chevron-up"></a>
+ <a class="comment-downvoteoff" action"" href=""><span class="glyphicon glyphicon-chevron-down"></a>
+
+<% if(typeof(comment_data._author) == 'object') { %>
+  <div class="profile-name">
+    <a href="/user/<%= comment_data._author._id %>">
+      <%= comment_data._author.name.first %> <%= comment_data._author.name.last %>
+    </a>
+  </div>
+<% } else { %>
+  <div class="profile-name">
+    <a href="/user/<%= comment_data._author %>">
+    <!-- <a href="#"> -->
+      <%= comment_data._author %>
+      <%//= comment_data._author.name.last %>
+    </a>
+  </div>
+<% } %>
+
+<div class="full-comment">
+  <p><%= comment_data.content_text %></p>
+</div>
+<div class="comment-footer">
+  <!-- <span>
+    <input class="comment-reply" placeholder="Reply...">
+  </span> -->                        
+  <span><a class="flag_comment">Flag</a></span>
+  <span id="edit" class="edit_comment"><a>Edit</a></span>
+</div>
+
+
+<!-- Comments Begin -->
+
+  <% if (false) { // see for comment_data.reply === true %>
+    <div class="reply-on-comment">
+      <% //comment_data._comments = comment_data._comments %>
+
+      <% var i = 0; %>
+      <% for(i = 0; i < comment_data._comments.length; ++i) { %>
+          
+        <% console.log(i) %>
+        <%// console.log("jjjjjjjjjjjjjjjjjjj") %>
+        <%// (function(comment_data._comments, i) { %>      
+          <%// console.log(i) %>
+          <%// console.log(comment_data._comments.length) %>
+          <% console.log("ooooooooooooooooooooooooooooooooo") %>
+          <% console.log({comment_data: comment_data._comments[i]}) %>
+          <% console.log("ooooooooooooooooooooooooooooooooo") %>
+
+          <div class="comment add-comment" id="comment_<%=comment_data._comments[i].pub_id%>">
+            <% if(hasValue(comment_data._comments[i])) { %>
+              <%- rendered_include('views/zs_comment.ejs', {comment_data: comment_data._comments[i],
+                user_info: comment_data._author,}) %>
+            <% } %>
+          </div>
+          <%// console.log("=====================================") %>
+          <%// console.log(i) %>
+          <%// console.log(comment_data._comments.length) %>
+          <%// console.log(comment_data._comments) %>
+        <%// })(comment_data._comments, i); %>
+        <%// console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiii") %>
+        <%// console.log(i) %>        
+        <%// console.log(comment_data._comments) %>        
+        
+
+      <% } %>
+
+    </div>
+  <% } %>
+
+<!-- Comments End -->
+<%// } %>

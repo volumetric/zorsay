@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include zs_head_meta.ejs %>
+  <%- include zs_external_scripts %>
+
+  <head>
+    <meta name="robots" content="noindex, follow">
+    <title> <%= single_cat_page_data.cat_data.name %> - Zorsay</title> <!-- #TODO#DONE put the Category title here -->
+  </head>
+
+
+  <body>
+    <!-- Notification on Page Begin -->
+    <%- include zs_global_notification.ejs %>
+    <!-- Notification on Page Ends -->
+    
+    <!-- ZS all qna full Page begin -->
+    <section id="zs-qna-page">
+
+      <!-- ZS Fixed navbar begin -->
+      <%- rendered_include('views/zs_navbar.ejs', {navbar_data: single_cat_page_data.navbar_data}) %>
+      <!-- ZS Fixed navbar end -->
+
+      <div class="container">
+
+        <!-- ZS top header begin -->
+        <%//- include zs_top_header.ejs %>
+        <!-- ZS top header end -->
+
+        <!-- ZS all shopex listing begin -->
+        <section id="cat-page" style="padding-top: 20px;">
+          <%/*- include zs_banner_take_tour.ejs */%>
+          
+          <!-- Category main row begin -->
+          <div class="row">
+            <!-- Single QNA page main column begin -->
+            
+            <%- rendered_include('views/zs_single_cat.ejs', { 
+              cat_data: single_cat_page_data.cat_data, 
+              user_info: single_cat_page_data.navbar_data.user_info,
+              loggedIn: single_cat_page_data.loggedIn,
+              page_info: page_info,
+              }) %>
+            <!-- Single QNA page main column end -->
+
+            <!-- Category right sidebar begin -->
+            <%/*- rendered_include('views/zs_right_sidebar.ejs', {page_info: page_info}) */%>
+            <!-- Category right sidebar end -->
+
+          </div>
+          <!-- Category main row end -->
+        </section>
+        <!-- ZS all Category listing end -->
+      </div>
+      <!-- div class="container" end -->
+    </section>
+    <!-- section id="zs-all-Category-page" end -->
+    <!-- ZS Page Footer begin -->
+    <div id="zs_some_footer"></div>
+    <%/*- include zs_end_footer.ejs */%>
+    <!-- ZS Page Footer end -->
+    
+    <!-- ZS Single Category Page end -->
+
+    <!-- start loading and running the scripts -->
+    <!-- <script data-main="/js/zs_single_cat_page" type="text/javascript" src="/js/libs/require.js"></script> -->
+    
+    <!-- <script src="/js/libs/jquery.js"></script>
+    <script src="/js/libs/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $('#zs_sidebar_nav').affix();
+    </script> -->
+    
+    <!-- ##### FOR SMOOTH SCROLLING of HASHED TARGETS ##### -->
+    
+    <script type="text/javascript">window.document.body.scrollTop = 0;</script>
+    <!-- <script type="text/javascript">
+    $(function() {
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top - 44
+            }, 500);
+            return false;
+          }
+        }
+      });
+    });
+    </script> -->
+
+  </body>
+</html>

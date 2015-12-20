@@ -1,0 +1,49 @@
+<div class="modal modal-tny fade zs-fade" id="zsShareModal" tabindex="-1" role="dialog" aria-labelledby="zsShareModalLabel" aria-hidden="true">
+  <div class="modal-dialog-share">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <% if (typeof(page_info) != "undefined")  { %>
+          <h4 class="modal-title">Share This <%= page_info.post_type ? page_info.post_type : "link"%> </h4>
+        <% } else { %>
+          <h4 class="modal-title">Share This Link </h4>
+        <% } %>
+      </div>
+      <div class="modal-body">            
+        <div class="form-group">
+          <form id="wizForm" action="#" class="form-horizontal">
+            <div class="wizard-form"> 
+            <div class="wizard-content">
+
+            <h3>Pick Your Network</h3>
+
+            <div class="zs-luv">
+              <div class="well well-sm">
+                <div class="luv-heading">
+                  <!-- <span>
+                    Don't Forget to Follow Us
+                  </span> -->
+                </div>                    
+                <div class="luv-action">
+                  <% if (typeof(page_info) != "undefined")  { %>
+                  <a class="zs_fb_share zs_social_share" href="<%=fb_share(page_info)%>"target="_blank"><img src="/img/fb.png" alt="Share This <%= page_info.post_type %> on Facebook"></a>
+                  <a class="zs_tw_share zs_social_share" href="<%=tw_share(page_info)%>"target="_blank"><img src="/img/twitter.png" alt="Share This <%= page_info.post_type %> on Twitter"></a>
+                  <a class="zs_gp_share zs_social_share" href="<%=gp_share(page_info)%>"target="_blank"><img src="/img/google.png" alt="Share This <%= page_info.post_type %> on Google+"></a>
+                <% } else { %>
+                  <a href="https://www.facebook.com/say.zorsay"target="_blank"><img src="/img/fb.png" alt="Zorsay.com Facebook Page"></a>
+                  <a href="https://twitter.com/sayZorsay"target="_blank"><img src="/img/twitter.png" alt="Zorsay.com Facebook Page"></a>
+                  <a href="https://plus.google.com/+Zorsay"target="_blank"><img src="/img/google.png" alt="Zorsay.com Facebook Page"></a>
+                <% } %>
+                </div>
+              </div>
+            </div>
+
+            </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div>

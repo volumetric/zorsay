@@ -1,0 +1,13 @@
+.zebra { background-color: #efefef; }
+
+img.flag { height: 10px; width: 15px; padding-right: 10px; }
+
+.procat-result td {vertical-align: top }
+.procat-image { width: 60px; }
+.procat-image img { height: 80px; width: 60px;  }
+.procat-info { padding-left: 10px; vertical-align: top; }
+.procat-title { font-size: 1.2em; padding-bottom: 15px; }
+.procat-synopsis { font-size: .8em; color: #888; }
+.select2-highlighted .procat-synopsis { font-size: .8em; color: #eee; }
+.bigdrop.select2-container .select2-results {max-height: 300px;}
+.bigdrop .select2-results {max-height: 300px;}

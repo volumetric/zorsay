@@ -1,0 +1,155 @@
+
+/* RATING 
+#rating1 { list-style:none; width:460px; margin:20px auto; }
+#rating1 li { display:inline; float:left; }
+#rating1 li a { display:block; width:25px; height:25px; margin:5px; border:1px solid #888; background-color:#333; text-indent:-9999px;
+	-moz-box-shadow:0 0 5px #888; -moz-border-radius:40px; -webkit-box-shadow:0 0 5px #888; -webkit-border-radius:40px; -o-box-shadow:0 0 5px #888; -o-border-radius:40px; }
+*/
+
+#review-form-comments {
+margin-top: -2px;
+float: left;
+display: block;
+position: left;
+width: 300px;
+}
+
+.note-editable {
+overflow: auto;
+}
+
+#comment-counter{  
+bottom: 8px;
+right: 6px;
+font-size: 12px;
+font-weight: normal;
+background: #fff;
+color: #999;
+z-index: 1;
+padding-left: 5px;
+}
+
+.navbar-toolbar.navbar-default {
+background-color: #f8f8f8;
+/*border-color: #d7d7d7;*/
+}
+
+/*#review-form-comments > textarea{
+margin-top: -2px;
+float: left;
+display: block;
+position: left;
+width: 300px;
+}*/
+
+/*.char_remain { list-style:none; width:460px; }*/
+/*.char_remain { display:inline; float:right; }*/
+/*#rating8 li a { display:block; width:20px; height:20px; margin:3px; border:0.5px solid #888; background-color:#333; text-indent:-9999px;*/
+  /*-moz-box-shadow:0 0 5px #888; -moz-border-radius:20px; -webkit-box-shadow:0 0 5px #888; -webkit-border-radius:20px; -o-box-shadow:0 0 5px #888; -o-border-radius:20px; }  */
+
+#product-review-form h4 {
+clear: both;
+float: none;
+padding: 4px 10px;
+margin: 0 10px 15px;
+font-size: 16px;
+line-height: 23px;
+font-weight: normal;
+color: #444;
+background: #f4f4f4;
+}
+
+#store-form-detailed{
+display: block;
+float: left;
+width: 280px;
+margin: 5px 25px 0 0;
+font-size: 14px;
+line-height: 20px;
+color: #666;
+text-align: right;
+}
+
+.rewrite {
+clear: none;
+float: left;
+width: 593px;
+margin: 0 0 40px!important;
+}
+
+.overall {
+	width: 700px;
+	height: 1.5px;
+  	margin: 5px 10px 13px 135px;
+  	overflow: hidden;
+  	background-color: #ebebeb;
+  	float: left;
+}
+
+#rating1 { list-style:none; width:460px; }
+#rating1 li { display:inline; float:left; }
+#rating1 li a { display:block; width:20px; height:20px; margin:3px; border:0.5px solid #888; background-color:#333; text-indent:-9999px;
+  -moz-box-shadow:0 0 5px #888; -moz-border-radius:20px; -moz-width: 20px; -moz-height: 20px; -webkit-box-shadow:0 0 5px #888; -webkit-border-radius:20px; -o-box-shadow:0 0 5px #888; -o-border-radius:20px; }
+
+#rating2 { list-style:none; width:460px; }
+#rating2 li { display:inline; float:left; }
+#rating2 li a { display:block; width:20px; height:20px; margin:3px; border:0.5px solid #888; background-color:#333; text-indent:-9999px;
+  -moz-box-shadow:0 0 5px #888; -moz-border-radius:20px; -webkit-box-shadow:0 0 5px #888; -webkit-border-radius:20px; -o-box-shadow:0 0 5px #888; -o-border-radius:20px; } 
+
+
+#rating3 { list-style:none; width:460px; }
+#rating3 li { display:inline; float:left; }
+#rating3 li a { display:block; width:20px; height:20px; margin:3px; border:0.5px solid #888; background-color:#333; text-indent:-9999px;
+  -moz-box-shadow:0 0 5px #888; -moz-border-radius:20px; -webkit-box-shadow:0 0 5px #888; -webkit-border-radius:20px; -o-box-shadow:0 0 5px #888; -o-border-radius:20px; }
+
+#rating4 { list-style:none; width:460px; }
+#rating4 li { display:inline; float:left; }
+#rating4 li a { display:block; width:20px; height:20px; margin:3px; border:0.5px solid #888; background-color:#333; text-indent:-9999px;
+  -moz-box-shadow:0 0 5px #888; -moz-border-radius:20px; -webkit-box-shadow:0 0 5px #888; -webkit-border-radius:20px; -o-box-shadow:0 0 5px #888; -o-border-radius:20px; }  
+
+#rating5 { list-style:none; width:460px; }
+#rating5 li { display:inline; float:left; }
+#rating5 li a { display:block; width:20px; height:20px; margin:3px; border:0.5px solid #888; background-color:#333; text-indent:-9999px;
+  -moz-box-shadow:0 0 5px #888; -moz-border-radius:20px; -webkit-box-shadow:0 0 5px #888; -webkit-border-radius:20px; -o-box-shadow:0 0 5px #888; -o-border-radius:20px; }  
+
+#rating6 { list-style:none; width:460px; }
+#rating6 li { display:inline; float:left; }
+#rating6 li a { display:block; width:20px; height:20px; margin:3px; border:0.5px solid #888; background-color:#333; text-indent:-9999px;
+  -moz-box-shadow:0 0 5px #888; -moz-border-radius:20px; -webkit-box-shadow:0 0 5px #888; -webkit-border-radius:20px; -o-box-shadow:0 0 5px #888; -o-border-radius:20px; }  
+
+#rating7 { list-style:none; width:460px; }
+#rating7 li { display:inline; float:left; }
+#rating7 li a { display:block; width:20px; height:20px; margin:3px; border:0.5px solid #888; background-color:#333; text-indent:-9999px;
+  -moz-box-shadow:0 0 5px #888; -moz-border-radius:20px; -webkit-box-shadow:0 0 5px #888; -webkit-border-radius:20px; -o-box-shadow:0 0 5px #888; -o-border-radius:20px; }  
+
+#rating8 { list-style:none; width:460px; }
+#rating8 li { display:inline; float:left; }
+#rating8 li a { display:block; width:20px; height:20px; margin:3px; border:0.5px solid #888; background-color:#333; text-indent:-9999px;
+  -moz-box-shadow:0 0 5px #888; -moz-border-radius:20px; -webkit-box-shadow:0 0 5px #888; -webkit-border-radius:20px; -o-box-shadow:0 0 5px #888; -o-border-radius:20px; }  
+
+/*
+#ratinginfo1 { clear:left; width:350px; margin:120px auto; }
+#ratinginfo1 p { text-align:center; background-image:url("../images/textbg.png"); font:20px Georgia,'Times New Roman',serif; padding:10px;
+	-moz-box-shadow:0 0 5px #888; -moz-border-radius:40px; -webkit-box-shadow:0 0 5px #888; -webkit-border-radius:40px; -o-box-shadow:0 0 5px #888; -o-border-radius:40px; }
+*/
+
+#ratinginfo1 {display: block; float: left; width: 75px; height: 28px; border; 1px solid #888; margin: 0px 10px 0px 5px; }
+#ratinginfo1 p { text-align:center; padding: 3px; font-size: 13px; font-weight: 600; color: #888; text-transform: uppercase; -moz-box-shadow:0 0 5px #888; -moz-width:75px; -moz-height:28px; -o-box-shadow:0 0 5px #888; -o-width:75px; -o-height:28px; -webkit-box-shadow:0 0 5px #888; -webkit-width:75px;-webkit-height:28px;}	
+
+#ratinginfo2 {display: block; float: left; width: 75px; height: 28px; border; 1px solid #888; margin: 0px 10px 0px 5px; }
+#ratinginfo2 p { text-align:center; padding: 3px; font-size: 13px; font-weight: 600; color: #888; text-transform: uppercase; -moz-box-shadow:0 0 5px #888; -moz-width:75px; -moz-height:28px; -o-box-shadow:0 0 5px #888; -o-width:75px; -o-height:28px; -webkit-box-shadow:0 0 5px #888; -webkit-width:75px;-webkit-height:28px;}  
+
+#ratinginfo3 {display: block; float: left; width: 75px; height: 28px; border; 1px solid #888; margin: 0px 10px 0px 5px; }
+#ratinginfo3 p { text-align:center; padding: 3px; font-size: 13px; font-weight: 600; color: #888; text-transform: uppercase; -moz-box-shadow:0 0 5px #888; -moz-width:75px; -moz-height:28px; -o-box-shadow:0 0 5px #888; -o-width:75px; -o-height:28px; -webkit-box-shadow:0 0 5px #888; -webkit-width:75px;-webkit-height:28px;}
+
+#ratinginfo4 {display: block; float: left; width: 75px; height: 28px; border; 1px solid #888; margin: 0px 10px 0px 5px; }
+#ratinginfo4 p { text-align:center; padding: 3px; font-size: 13px; font-weight: 600; color: #888; text-transform: uppercase; -moz-box-shadow:0 0 5px #888; -moz-width:75px; -moz-height:28px; -o-box-shadow:0 0 5px #888; -o-width:75px; -o-height:28px; -webkit-box-shadow:0 0 5px #888; -webkit-width:75px;-webkit-height:28px;}  
+
+#ratinginfo5 {display: block; float: left; width: 75px; height: 28px; border; 1px solid #888; margin: 0px 10px 0px 5px; }
+#ratinginfo5 p { text-align:center; padding: 3px; font-size: 13px; font-weight: 600; color: #888; text-transform: uppercase; -moz-box-shadow:0 0 5px #888; -moz-width:75px; -moz-height:28px; -o-box-shadow:0 0 5px #888; -o-width:75px; -o-height:28px; -webkit-box-shadow:0 0 5px #888; -webkit-width:75px;-webkit-height:28px;} 
+
+#ratinginfo6 {display: block; float: left; width: 75px; height: 28px; border; 1px solid #888; margin: 0px 10px 0px 5px; }
+#ratinginfo6 p { text-align:center; padding: 3px; font-size: 13px; font-weight: 600; color: #888; text-transform: uppercase; -moz-box-shadow:0 0 5px #888; -moz-width:75px; -moz-height:28px; -o-box-shadow:0 0 5px #888; -o-width:75px; -o-height:28px; -webkit-box-shadow:0 0 5px #888; -webkit-width:75px;-webkit-height:28px;} 
+
+#ratinginfo7 {display: block; float: left; width: 75px; height: 28px; border; 1px solid #888; margin: 0px 10px 0px 5px; }
+#ratinginfo7 p { text-align:center; padding: 3px; font-size: 13px; font-weight: 600; color: #888; text-transform: uppercase; -moz-box-shadow:0 0 5px #888; -moz-width:75px; -moz-height:28px; -o-box-shadow:0 0 5px #888; -o-width:75px; -o-height:28px; -webkit-box-shadow:0 0 5px #888; -webkit-width:75px;-webkit-height:28px;} 

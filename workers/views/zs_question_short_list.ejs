@@ -1,0 +1,9 @@
+<%/* console.log(question_list_data) */%>
+<% for(var i = 0; i < question_list_data.length; ++i) { %>
+	<!-- question short begin -->
+	<%- rendered_include('views/zs_question_short.ejs', {question_data: question_list_data[i],
+		user_info: user_info,
+		loggedIn: loggedIn,
+		}) %>
+	<!-- question short end -->
+<% } %>

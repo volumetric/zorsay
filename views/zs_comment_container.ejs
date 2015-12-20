@@ -1,0 +1,73 @@
+<section class="threaded-comments col-md-12 col-sm-12 col-xs-12">
+  <div class="comment-list col-md-12 col-sm-12 col-xs-12">
+    <!-- 
+    comment_container_data
+      user_info
+        name
+          first
+          last
+        _id
+      comments = [array of comments of the first level]
+    -->
+
+    <!-- New Comment Input Begin -->
+    <div class="comment add-comment col-md-12 col-sm-12 col-xs-12">
+      <% if (hasValue(comment_container_data.user_info)) { %>
+        <a href="/users/<%= comment_container_data.user_info._id %>">
+          <div class="usr_profile_img_container_30" style="display: inline-block;">
+            <% if (hasValue(comment_container_data.user_info.img_icon_url)) { %>      
+              <img class="profile-img comment-img" src="<%= comment_container_data.user_info.img_icon_url %>" alt="<%= comment_container_data.user_info.name.first %>">
+            <% } else { %>
+              <img class="profile-img comment-img" src="#" alt="<%= comment_container_data.user_info.name.first %>">
+            <% } %>
+          </div>
+        </a>
+      <% } else { %>
+          <img class="profile-img comment-img" src="/img/anonuser.jpg" alt="no-user">
+      <% } %>
+      
+      <% if (hasValue(comment_container_data.user_info)) { %>
+        <div class="profile-name">
+          <a href="/users/<%= comment_container_data.user_info._id %>">
+            <%= comment_container_data.user_info.name.first %>
+            <%= comment_container_data.user_info.name.last %>
+          </a>
+        </div>
+        <!-- <div class="profile-name">
+          <span>
+            <a href="#" class="make_anon">
+              <small>comment anonymously</small>
+            </a>
+          </span>
+        </div> -->
+      <% } else { %>
+        <p class="no-user"></p>
+      <% } %> 
+
+      <div class="comment-content animated" cols="50" name="comment" placeholder="" contenteditable rows="2"></div>
+      <!-- <textarea class="comment-content animated" cols="50" name="comment" placeholder="" rows="2"></textarea> -->
+      <button class="btn btn-comment shopex-comment-btn"> Your Comment </button>
+    </div>
+    <!-- New Comment Input End -->
+    
+    <div class="comment comment_list col-md-12 col-sm-12 col-xs-12">
+    <!-- Comments Begin -->
+    <% comms = comment_container_data.comments %>
+
+    <%// console.log(comms) %>
+
+    <% for(var i = 0; i < comms.length; ++i) { %>
+      
+      <div class="comment add-comment col-md-12 col-sm-12 col-xs-12" id="comms_<%=comms[i]._id%>">
+        <% if(hasValue(comms[i])) { %>
+          <%- rendered_include('views/zs_comment.ejs', {comment_data: comms[i],
+            user_info: comment_container_data.user_info,}) %>
+        <% } %>
+      </div>
+        
+    <% } %>
+
+    </div>
+    </div>
+    <!-- Comments End -->     
+</section>

@@ -1,0 +1,85 @@
+ <!-- Login Modal -->
+<div class="modal fade zs-fade" id="mySigninModal" tabindex="-1" role="dialog" aria-labelledby="mySignModalLabel" aria-hidden="true">
+  <div class="modal-dialog-signin">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <div class="modal-content-signin">
+      <!-- <div class="modal-header"> -->
+    
+  <!-- LOGIN -->
+    <section id="login">
+    <!-- <div class="col-md-4 col-md-offset-4"> -->
+      <div class="zs-login-box-in" style="text-align:center;">
+        <h2 class="bigintro">Login</h2>
+        <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"> -->
+        <!-- <fb:login-button id="zs_fblogin" scope="public_profile,email"></fb:login-button> -->
+        <!-- <button id="zs_fblogin" scope="public_profile,email">FB_LOGIN</button> -->
+
+        <!-- <div class="center"><h5>login using your social account</h5></div> -->
+        <div class="divide-20"></div>
+        <a id="zs_fblogin" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook"></i> Login with Facebook</a>
+        <div class="divide-20"></div>
+
+        <div id="status"></div><div id="fbstatus"></div>
+        <div id="fb_load_status" style="display:none"><img src="/images/17.gif"/></div>
+
+        <div class="center"><h5>or login using your email</h5></div>
+        <form role="form">
+          <div class="form-group">
+          <!-- <label for="loginInputEmail">Email address</label> -->
+          <i class="fa fa-envelope"></i>
+          <input type="email" class="form-control" placeholder="email" id="loginInputEmail" name="email">
+          </div>
+          <div class="form-group"> 
+          <!-- <label for="loginInputPassword">Password</label> -->
+          <i class="fa fa-lock"></i>
+          <input type="password" class="form-control" placeholder="password" id="loginInputPassword" name="password">
+          </div>
+        </form>
+        <abbr style="display:inline-block;" class="alert" id="login-message"></abbr>
+        <!-- <input type="submit" style="display:none;"/> -->
+        <!-- <input type="submit" style="position: absolute; left: -9999px"/> -->
+      </div>
+      
+      <div class="zs-login-box-sub">
+        <form role="form">          
+         <div class="form-actions">
+          <div class="checkbox">
+             <label><input type="checkbox" id="loginRememberMe" name="rememberme">Remember me</label>
+          </div>        
+          <button type="submit" class="btn btn-danger" id="login-submit">Submit</button>
+          </div>
+        </form>
+      
+                      <!-- SOCIAL LOGIN -->
+                <!-- <div class="divide-20"></div>
+                <div class="center" style="text-align:center;">
+                  <strong>Or login using your social account</strong>
+                </div>
+                <div class="divide-20"></div>
+                <div class="social-login center" style="text-align:center;">
+                  <a class="btn btn-primary btn-lg">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                  <a class="btn btn-info btn-lg">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a class="btn btn-danger btn-lg">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                </div> -->
+                <!-- /SOCIAL LOGIN -->
+
+        <div class="login-helpers" style="text-align:center;">
+          <!-- <li class="zs-defaultbtn" data-toggle="modal" data-target="#mySigninModal"><a href="#">Sign In</a></li> -->
+          <!-- <a href="#" id="forgotModalLink" onclick="swapScreen('myForgotModal');return false;">Forgot Password?</a> -->
+          <a href="#" id="forgotModalLink"><b>Forgot Password?</b></a>
+          <!-- <br>Don't have an account with us? <a href="#" id="registerModalLink" onclick="swapScreen('myRegisterModal');return false;">Register now!</a> -->
+          <br>Don't have an account with us? <a href="#" id="registerModalLink"><b>Register now!</b></a>
+        </div>
+      </div>
+    <!-- </div> -->
+    </section>
+    <!--/LOGIN -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

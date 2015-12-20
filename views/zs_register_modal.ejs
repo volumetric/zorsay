@@ -1,0 +1,98 @@
+<!-- Register Modal -->
+<div class="modal fade zs-fade" id="myRegisterModal" tabindex="-1" role="dialog" aria-labelledby="mySignModalLabel" aria-hidden="true">
+  <div class="modal-dialog-signin">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <div class="modal-content-signin">
+      <!-- <div class="modal-header"> -->
+    
+        <!-- REGISTER -->
+      <section id="register">
+              <div class="zs-login-box-in" style="text-align:center;">
+                <h2 class="bigintro">Register</h2>
+
+                <div class="divide-20"></div>
+                <a id="zs_fblogin" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook"></i> Signup with Facebook</a>
+                <div class="divide-20"></div>
+
+                <div id="status_reg"></div><div id="fbstatus_reg"></div>
+                <div id="fb_load_status_reg" style="display:none"><img src="/images/17.gif"/></div>
+
+                <div class="center"><h5>or signup using your email</h5></div>
+
+                <form role="form">
+                  <div class="form-group">
+                    <!-- <label for="registerInputName">Full Name</label> -->
+                    <i class="fa fa-font"></i>
+                    <input type="text" class="form-control" name="name" placeholder="Full Name" id="registerInputName" >
+                  </div>
+                  <!-- <div class="form-group">
+                  <label for="registerInputUsername">Username</label>
+                  <i class="fa fa-user"></i>
+                  <input type="text" class="form-control" id="registerInputUsername" >
+                  </div> -->
+                  <div class="form-group">
+                    <!-- <label for="registerInputEmail">Email address</label> -->
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" class="form-control" placeholder="email" name="email" id="registerInputEmail" >
+                  </div>
+                  <div class="form-group"> 
+                    <!-- <label for="registerInputPassword">Password</label> -->
+                    <i class="fa fa-lock"></i>
+                    <input type="password" class="form-control" placeholder="password" name="password" id="registerInputPassword" >
+                  </div>
+                  <!-- <div class="form-group"> 
+                    <label for="registerInputPasswordConfirm">Confirm Password</label>
+                    <i class="fa fa-check-square-o"></i>
+                    <input type="password" class="form-control" name="password_confirm" id="registerInputPasswordConfirm" >
+                  </div> -->
+
+                  <%/*- (typeof(recaptcha_form) != 'undefined') ? recaptcha_form : "" */%>
+
+                  <!-- <div id="recaptcha_div"></div> -->
+
+                  <!-- <input type="button" class="show_recaptcha" value="Show reCAPTCHA"></input> -->
+
+                </form>
+                <abbr style="display:inline-block;" class="alert" id="register-message"></abbr>
+              </div>
+
+              <div class="zs-login-box-sub" style="text-align:center;">
+                <form role="form">          
+                  <div class="form-actions">
+                    <!-- <div class="checkbox"> -->
+                       <!-- <label> <input type="checkbox" class="uniform" value="" id="registerTOS"> --> By Registering with us, you agree to our <a target="_blank" href="/about-zorsay#tos">Terms of Service</a><!-- <hr> --> <!-- <a href="/privacy">Privacy Policy</a> </label>-->
+                    <!-- </div>         -->
+                  <button type="submit" class="btn btn-success" id="register-submit">Sign Up</button>
+                  </div>
+                </form>
+                  
+
+                <!-- SOCIAL REGISTER -->
+                <!-- <div class="center" style="text-align:center;">
+                  <strong>Or register using your social account</strong>
+                </div>
+                <div class="divide-20"></div>
+                <div class="social-login center" style="text-align:center;">
+                  <a class="btn btn-primary btn-lg">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                  <a class="btn btn-info btn-lg">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a class="btn btn-danger btn-lg">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                </div> -->
+                <!-- /SOCIAL REGISTER -->
+
+                <div class="login-helpers" style="text-align:center;">
+                  <!-- <a href="#" id="loginModalLink" onclick="swapScreen('mySigninModal');return false;"> Back to Login</a> <br> -->
+                  <a href="#" id="loginModalLink"> <b>Back to Login</b></a> <br>
+                </div>
+              </div>
+        <!-- </div> -->
+      </section>
+      <!--/REGISTER -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

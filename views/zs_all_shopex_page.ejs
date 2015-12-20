@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include zs_head_meta.ejs %>
+  <%- include zs_external_scripts %>
+
+  <% var sxld = all_shopex_data.shopex_main_column_data.shopex_list_data %>
+
+  <% var title_str = "Read and Share Online Shopping Experiences of Buyers in India"; %>
+  <% var authors_list_str = ""; %>
+  <% var description_str = site_message; %>
+  <% var keywords_list_str = ""; %>
+  <% var share_image = ""; %>
+
+  <% 
+    var share_default_image = share_default_square_image;
+  %>
+
+  <%
+    var authors_list_arr = []
+    authors_list_arr = authors_list_arr.concat(site_authors);
+
+    for(var i = 0; i < sxld.length; ++i) {
+      if((sxld[i]) && 
+        (typeof(sxld[i]) == "object")) {
+        var aa = sxld[i]._author ? sxld[i]._author.fullname : ""
+        if ((aa) && (authors_list_arr.indexOf(aa) == -1)){
+          authors_list_arr.push(aa);
+        }
+      }
+    }
+    authors_list_str = makeStr(authors_list_arr);
+  %>
+
+  <%
+    var keywords_list_arr = ["Online Shopping", "Questions", "Answers", "Shopping Experience", "Reviews", "Online Shopping Experiences", "Online Shopping Reviews", "Online Shopping Feedback", "Shopping Experiences", "Shopping Reviews", "Shopping Feedback"];
+    keywords_list_arr = keywords_list_arr.concat(authors_list_arr);
+    keywords_list_str = makeStr(keywords_list_arr);
+  %>
+
+  <head>
+    <title> <%= title_str %> - Zorsay</title>
+
+    <meta name="keywords" content="<%= keywords_list_str %>">
+    <meta name="description" content="<%= description_str %>">
+    <meta name="author" content="<%= authors_list_str %>">
+    <link rel="canonical" href="<%=site_host%>/shopping-experiences">
+
+    <meta property="og:title" content="<%= title_str %>"/><!-- 95 chars -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="<%= share_image %>"/>
+    <!-- specify a square image to ensure the best visibility -->
+    <meta property="og:url" content="<%=site_host%>/shopping-experiences"/>
+    <meta property="og:description" content="<%= description_str %>"/><!-- 297 chars-->
+    
+    <meta property="fb:admins" content="683593457,674922635874976"/>
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="<%=site_host%>/shopping-experiences">
+    <meta name="twitter:title" content="<%= title_str %>"><!-- 70 chars -->
+    <meta name="twitter:description" content="<%= description_str %>"><!-- 200 chars -->
+    <meta name="twitter:image" content="<%= share_image %>">
+    <!-- specify a square image no smaller than 60×60 pixels -->
+    <meta name="twitter:domain" content="zorsay.com">
+  </head>
+
+  <body>
+    <!-- Notification on Page Begin -->
+    <%- include zs_global_notification.ejs %>
+    <!-- Notification on Page Ends -->
+
+    <!-- ZS all Shopex Page begin -->
+    <section id="zs-all-shopex-page">
+
+      <% /*console.log(all_shopex_data.shopex_main_column_data)*/ %>
+
+      <!-- ZS Fixed navbar begin -->
+      <%/*- include zs_navbar.ejs */%>
+      <%/*- rendered_include('views/zs_navbar.ejs', {navbar_data: navbar_data}) */%>
+      <%- rendered_include('views/zs_navbar.ejs', {navbar_data: all_shopex_data.navbar_data}) %>
+      <%/*- rendered_include('views/zs_navbar.ejs', {navbar_data: {user_info: {name: {first: "Vinit", last: "Agrawal"}, pub_id: 13731 }, }, }) */%>
+
+      <div class="container">
+
+        <!-- ZS top header begin -->
+        <%- include zs_top_header.ejs %>
+        <!-- ZS top header end -->
+
+        <!-- ZS all shopex listing begin -->
+        
+        <section id="all-shopex">
+
+          <%- include zs_banner_take_tour.ejs %>
+          
+          <!-- Shopex main row begin -->
+          <div class="row">
+            <!-- Shopex main column begin -->
+            <%/*- include zs_shopex_main_column.ejs */%>
+            <%- rendered_include('views/zs_shopex_main_column.ejs', {shopex_main_column_data: all_shopex_data.shopex_main_column_data,
+              list_order: all_shopex_data.list_order,
+              user_info: all_shopex_data.navbar_data.user_info,
+              loggedIn: all_shopex_data.loggedIn,
+              }) %>
+            <!-- Shopex main column end -->
+
+            <!-- Shopex right sidebar begin -->
+            <%/*- include zs_right_sidebar.ejs*/ %>
+            <%- rendered_include('views/zs_right_sidebar_populated.ejs', {
+              side_bar_data: side_bar_data,
+              }) %>
+            <!-- Shopex right sidebar end -->            
+          </div>
+          <!-- Shopex main row end -->
+        </section>
+        <!-- ZS all shopex listing end -->
+      </div>
+      <!-- div class="container" end -->
+    </section>
+    <!-- section id="zs-all-shopex-page" end -->
+    
+    <!-- ZS Page Footer begin -->
+    <div id="zs_some_footer"></div>
+    <%/*- include zs_end_footer.ejs */%>
+    <!-- ZS Page Footer end -->
+
+    <!-- ZS all Shopex Page end -->
+
+    <%//- include zs_login_modal.ejs %>
+    <%//- include zs_register_modal.ejs %>
+    <%//- include zs_forgot_password_modal.ejs %>
+
+    <!-- start loading and running the scripts -->
+    <script data-main="/js/zs_all_shopex_page" type="text/javascript" src="/js/libs/require.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,119 @@
+        <div class="form-group">
+          <form id="wizForm" action="#" class="form-horizontal" >
+            <div class="wizard-form">
+               <div class="wizard-content">
+                <!-- Individual Tab Content Begin -->
+                <div class="tab-content">
+                 <!-- Alert in case of validation error - Begin -->
+                  <div class="alert alert-danger display-none">
+                    <a class="close" aria-hidden="true" href="#" data-dismiss="alert">×</a>
+                    Your form has errors. Please correct them to proceed.
+                  </div>                     
+
+                  <div class="alert alert-success display-none">
+                    <a class="close" aria-hidden="true" href="#" data-dismiss="alert">×</a>
+                    Your form validation is successful!
+                  </div>
+                  <!-- Alert in case of validation error - Begin -->
+
+                  <!-- First Tab Begin 1 of 3 -->
+                  <div class="tab-pane step1 active" id="rate-comment">
+
+                  <h2><strong>Update Account Information</strong></h2>
+                    <div class="form-group">
+                    <label class="col-md-4 col-sm-5 control-label">Full Name</label>
+                    <div class="col-md-5 col-sm-6">
+                        <input class="form-control fullname" id="fullname" type="text" placeholder="e.g.. Harold Lee">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <label class="col-md-4 col-sm-5 control-label">Small Bio</label>
+                    <div class="col-md-5 col-sm-6">
+                        <input class="form-control short_bio" id="short_bio" type="text" placeholder="e.g.. Web Designer at Zorsay.com">
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="col-md-4 col-sm-5 control-label">Big Bio</label>
+                    <div class="col-md-7 col-sm-6">
+                    <div class="comment-box">
+                      <textarea id="aboutme" class="aboutme" cols="50" name="comment" placeholder="Write about yourself in bit more detail." rows="7"></textarea>
+                    </div>
+                    </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                    <label class="col-md-4 col-sm-5 control-label">Age</label>
+                    <div class="col-md-3 col-sm-6">
+                        <input class="form-control age" id="age" type="text" placeholder="">
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="col-md-4 col-sm-5 control-label">Gender : </label>
+                    <div class="col-md-3 col-sm-6">
+                        <input class="form-control gender" id="gender" type="text" placeholder="">
+                    </div>
+                    </div>
+
+
+                    <div class="form-group">
+                    <label class="col-md-4 col-sm-5 control-label">Location</label>
+                    <div class="col-md-3 col-sm-6">
+                        <input class="form-control areacode" id="areacode" type="text" placeholder="Pincode or City name">
+                    </div>
+                    </div>
+
+                    <!-- <div class="form-group">
+                    <label class="col-md-4 col-sm-5 control-label">Edit Photo: </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input class="form-control profile_image_url" id="profile_image_url" type="text" placeholder="">
+                    </div>
+                    <div class="col-md-2 col-sm-2 pr-link">
+                        <a href="">Browse</a>
+                    </div>
+                    </div> -->
+
+                    <div class="form-group">
+                    <label class="col-md-4 col-sm-5 control-label"></label>
+                    <div class="col-md-3 col-sm-6">
+                      <abbr style="text-align:center;" class="alert" id="user-profile-message"></abbr>
+                    </div>
+                    </div>
+
+                  </div>  <!-- tab 1 -->
+
+
+                </div>
+
+                <!-- Individual Tab Content End -->
+
+               </div>
+
+               <div class="wizard-buttons">
+                <div class="row">
+                 <div class="col-md-12">
+                  
+                  <label class="col-md-4 col-sm-4 control-label">Verify Password: </label>
+                  <div class="col-md-5 col-sm-5">
+                      <input class="form-control verify_password" id="verify_password" type="password" placeholder="">
+                  </div>
+                  
+                  <div class="col-md-2 col-sm-2">
+                    <a href="#" id="user_profile_update_btn" class="btn btn-follow user_profile_update_btn">Update
+                    </a>
+                  </div>
+                 </div>
+                </div>
+               </div>
+
+               <!-- <div class="row">
+               <abbr style="display: inline-block; text-align:center;" class="alert alert-danger col-md-12" id="user-profile-message">hello darkness
+               </abbr>
+               </div> -->
+
+            </div>
+          </form>              
+        </div>

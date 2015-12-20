@@ -1,0 +1,172 @@
+  <% sd = single_shopex_data.shopex_data %>
+  <%/*rating_meaning = ['Awful','Bad','Not-Bad','Good','Great','Awesome']*/%>
+  
+  <%/*rating_meaning = ['N0','Awful','Bad','Not-Bad','Good','Great']*/%>
+  <%rating_meaning = ['na', 'Awful','Bad','Not-Bad','Good','Great']%>
+
+  <%/* rating_color = ['#B94A48','#D9534F','#ED9C28','#468847', '#5CB85C', '#6188f5'] */%>
+  <% rating_color = [ '#A3A3A3','#B94A48','#D9534F','#ED9C28','#468847', '#5CB85C'] %>
+
+  <%/* criteria_arr = ['ON-TIME DELIVERY', 'PRODUCT AS DESCRIBED', 'PRICING', 'PRODUCT VARIETY', 'EASE OF SHOPPING', 'CUSTOMER CARE', 'RETURN & REFUND'] */%>
+  <% criteria_arr = ['EASE OF SHOPPING', 'PRODUCT VARIETY', 'PRICING', 'COMMUNICATION', 'DELIVERY & PRODUCT', 'RETURN & REFUND'] %>
+
+  <%/* criteria_regular_arr = ['ON-TIME DELIVERY', 'PRODUCT AS DESCRIBED', 'PRICING', 'PRODUCT VARIETY', 'EASE OF SHOPPING', 'CUSTOMER CARE', 'RETURN & REFUND'] */%>
+  <% criteria_regular_arr = ['EASE OF SHOPPING', 'PRODUCT VARIETY', 'PRICING', 'COMMUNICATION', 'DELIVERY & PRODUCT', 'RETURN & REFUND'] %>
+
+  <%/* criteria_short_arr = ['otd', 'pad', 'pri', 'pro', 'eos', 'csu', 'rrp'] */%>
+  <% criteria_short_arr = ['eos', 'pro', 'pri', 'csu', 'pad', 'rrp'] %>
+
+  <% criteria_rating = [sd.eos_rating,
+                        sd.pro_rating,
+                        sd.pri_rating,
+                        sd.csu_rating,
+                        sd.pad_rating,
+                        sd.rrp_rating ]; %>
+
+  <% criteria_comment = [sd.eos_comment,
+                        sd.pro_comment,
+                        sd.pri_comment,
+                        sd.csu_comment,
+                        sd.pad_comment,
+                        sd.rrp_comment ]; %>
+
+  <!-- Rating Score Start -->
+  <section id="rating-score">
+  <div class="content-wrap">  
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <table class="table table-condensed shopex-score">
+        <thead>
+          <tr>
+            <th></th>
+            <th><span class="rate-awful">AWFUL</span> <span class="rate-great">GREAT</span></th>
+            <th></th>
+            <th class="comment">comment</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+        <% for(var i = 0; i < criteria_arr.length; ++i) { %>
+          <% if (!hasValue(criteria_rating[i])) { criteria_rating[i] = 0; }%>
+          <%/* if (hasValue(criteria_rating[i])) { */%>
+            <tr id="zs_<%=criteria_short_arr[i]%>">
+              <td class="col-sm-4 criteria"><%= criteria_arr[i] %></td>
+              <td>
+                
+                <div class="progress progress-xs">
+                  <div style="width: <%= criteria_rating[i]*20 %>%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="<%= criteria_rating[i]*20 %>" role="progressbar" class="progress-bar progress-bar-<%= rating_meaning[Math.ceil(criteria_rating[i])].toLowerCase() %>">
+                  <span class="sr-only"><%= criteria_rating[i]*20 %>% Complete (success)</span>
+                  </div>
+                </div>
+
+                <!-- <div class="slider slider-horizontal" style="width: 210px;">
+                  <div class="slider-track">
+                    <div class="slider-selection" style="left: 0%; width: 70%;"></div>
+                    <div class="slider-handle round" style="left: 70%;"></div>
+                    <div class="slider-handle round hide" style="left: 0%;"></div>
+                  </div>
+                  <div class="tooltip top" style="top: -30px; left: 136px;">
+                    <div class="tooltip-arrow"></div>
+                    <div class="tooltip-inner">3</div>
+                  </div>
+                  <div class="slider slider-horizontal"></div>
+                </div> -->
+
+              </td>
+              <td class="col-sm-1 rating">
+
+              <span class="label label-<%= rating_meaning[Math.ceil(criteria_rating[i])].toLowerCase()%> user-criteria-rating" zsrvalue="<%=criteria_rating[i]%>"><% if (criteria_rating[i] != 0) { %><%= criteria_rating[i] %>.0<% } else { %>n/a<% } %></span>                          
+              </td>
+              <td>
+                <!-- <span class="glyphicon glyphicon-comment spx-nocomment"></span> -->
+                
+                <!-- <span class="glyphicon glyphicon-comment spx-comment" data-container="body" data-toggle="popover" data-placement="right" data-content="<%=criteria_comment[i]%>" title="<%=criteria_regular_arr[i]%>"> -->
+
+
+                <%if ( (criteria_comment[i] != undefined) && (criteria_comment[i].length > 0)) { %>
+
+                <span id="<%=criteria_arr[i]%>" class="glyphicon glyphicon-comment spx-comment user-criteria-comment" data-container="body" data-toggle="popover" data-placement="right" zscvalue="<%=criteria_comment[i]%>" data-content="
+                  <div class='popover-scomment'>
+                      <div class='arrow' style=''></div>
+                        <div class='pop-scomment'>
+                          <h3><%=criteria_regular_arr[i]%></h3>
+                        </div>          
+                        <div contenteditable='false' class='criteria-comment'>
+                          <p><%=criteria_comment[i]%></p>
+                        </div>
+                  </div>">
+
+
+                  <!-- <div class='popover fade right in' style='top: 262.5px; left: 713px; display: block;'>
+                  <div class='arrow' style=''></div>
+                  <div class='popover-content'>
+                  <div class='popover-scomment'>
+                      <div class='arrow' style=''></div>
+                        <div class='pop-scomment'>
+                          <h3>ON-TIME DELIVERY</h3>
+                        </div>          
+                        <div contenteditable='false' class='criteria-comment'>
+                          <p>just this last thing</p>
+                        </div>
+                  </div>
+                  </div>
+                  </div> -->
+
+                  <!-- <div class='popover-scomment'>
+                    
+                      <div class='arrow'></div>
+                        <div class='pop-scomment'>
+                          <h3><%=criteria_regular_arr[i]%></h3>
+                        </div>          
+                        <div contenteditable='false' class='criteria-comment'>
+                          <p><%=criteria_comment[i]%></p>
+                        </div>
+                    
+                  </div> -->
+                  
+                  <!-- title="<%=criteria_regular_arr[i]%>" -->
+
+                  <!-- <div class='popover-scomment'>
+                    <div class='popover right'>
+                      <div class='arrow'></div>
+                        <div class='pop-scomment'>
+                          <h3>On-Time Delivery</h3>
+                        </div>          
+                        <div class='criteria-comment'>
+                          <p><%=criteria_comment[i]%></p>
+                        </div>
+                    </div>
+                  </div> -->
+
+                </span>
+
+                <% } else { %>
+
+                <span id="<%=criteria_arr[i]%>" class="glyphicon glyphicon-comment spx-nocomment">
+
+                <% } %>
+
+
+                <%/*= criteria_comment[i] */%>
+              </td>
+            </tr>
+          <%/* } */%>
+        <% } %>
+
+        <div class="criteria_content" style="display:none;" data-content= 
+        "<div class='arrow'></div>
+                        <div class='pop-scomment'>
+                          <h3><%=criteria_regular_arr[i]%></h3>
+                        </div>          
+                        <div class='criteria-comment shopex_comment'>
+                          <p><%=criteria_comment[i]%></p>
+                        </div>">
+                        
+                </div>
+          
+        </tbody>
+      </table>
+    </div>   <!-- shopex-1 end -->
+  </div> 
+  </section>
+  <!-- Rating Score End -->

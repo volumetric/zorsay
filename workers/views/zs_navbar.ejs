@@ -1,0 +1,118 @@
+<section id="navbar">   
+  <!-- ZS Fixed navbar begin -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>                
+        <a alt="Zorsay - Share you online shopping experience" class="navbar-brand zs-navbar-brand" href="/"><img src="/img/zs-logob-beta.png" class="img-responsive" alt="Responsive image">
+        </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <!-- <div class="col-md-6 col-sm-4">               -->
+          <form class="navbar-form navbar-left hidden" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" id="zs_content_search_query" placeholder="Search for an Online Store, Product or Category" style="width: 400px;">
+          </div>
+          <!-- <button type="submit" class="zs-defaultbtn" id="zs_content_search_btn">Search</button> -->
+          <a type="submit" id="zs_content_search_btn zs-nav-search" href="#">
+               <b class="fa fa-search fa-lg"></b>
+          </a> 
+        </form> 
+        <!-- </div> -->
+        <!-- <ul class="nav nav-pills navbar-right"> -->
+        <ul class="nav navbar-nav navbar-right">
+          
+          <!-- #addShopexModal -->
+          <li id="zs-navbar-addexperience" class="zs-addexperience zs-defaultbtn" data-toggle="modal" data-target="#addShopexModal">
+            <!-- <a href="#">Add Experience</a> -->
+            <!-- <button class="zs-defaultbtn">Add Experience</button> -->
+            <div style="text-align:center;">          
+              <a class="zs-spxbtn-navbar" href="#">
+                <b>Add Experience</b>
+              </a>          
+            </div>
+          </li>
+          
+          <!-- <li id="zs-navbar-login" class="zs-defaultbtn" data-toggle="modal" data-target="#mySigninModal">
+            <a href="#">Login</a>
+          </li> -->
+          
+          <li id="zs-navbar-askquestion" class="zs-askquestion zs-defaultbtn" data-toggle="modal" data-target="#askQuestionModal">
+            <!-- <a href="#">Ask Question</a> -->
+            <!-- <button class="zs-defaultbtn">Ask Question</button> -->
+            <div style="text-align:center;">          
+              <a class="zs-qnbtn-navbar" href="#">
+                <b>Ask a Question</b>
+              </a>          
+            </div>
+          </li>
+
+          <div id="user_info_div" style="display:none;"><%= navbar_data.user_info ? JSON.stringify(navbar_data.user_info) : "{}" %></div>
+
+          <% if (checkData(navbar_data, 'navbar_data.user_info.name.first')) { %>
+            <!-- username with credits + dropdown menu for user config -->
+            <li id="zs-navbar-user-dropdown" class="dropdown">
+              <a href="/profile" class="dropdown-toggle" data-toggle="dropdown">
+                <div class="usr_profile_img_container_30">
+                  <img class="profile-img" src="
+                  <% if(navbar_data.user_info.img_icon_url != undefined) { %>
+                    <%= navbar_data.user_info.img_icon_url %>
+                  <% } else { %>
+                    /img/newuser.jpg
+                  <% } %>
+                " alt="<%= navbar_data.user_info.name.first %> <%= navbar_data.user_info.name.last %>">
+                  <!-- <b class="caret"></b> -->
+                </div>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/profile">Profile</a></li>
+                <!-- <li><a href="/settings">Settings</a></li> -->
+                <li class="divider"></li>
+                <li><a href="#" id="logout-link">Logout</a></li>
+              </ul>
+            </li>
+
+            <li id="zs-navbar-login" class="zs-login zs-defaultbtn" data-toggle="modal" data-target="#mySigninModal" style="display:none"><a href="#">Login</a>
+            </li>
+          <% } else { %>
+            <li id="zs-navbar-user-dropdown" class="dropdown" style="display:none">
+              <a href="/profile" class="dropdown-toggle" data-toggle="dropdown" id="zs-user">My Account<b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/settings">Settings</a></li>
+                <li class="divider"></li>
+                <li><a href="#" id="logout-link">Logout</a></li>
+              </ul>
+            </li>
+
+            <li id="zs-navbar-login" class="zs-login zs-defaultbtn" data-toggle="modal" data-target="#mySigninModal"><a href="#">Login</a>
+            </li>
+          <% } %>
+
+          
+          
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+  <!-- ZS Fixed navbar end -->
+</section>
+
+<div id="zs_modal_heaven" class="login-populated register-populated forgot-populated addshopex-populated askquestion-populated missingfeature-populated">
+  <%- rendered_include('views/zs_login_modal.ejs', {}) %>
+  <%- rendered_include('views/zs_register_modal.ejs', {}) %>
+  <%- rendered_include('views/zs_forgot_password_modal.ejs', {}) %>
+
+  <%- rendered_include('views/zs_add_shopex_modal.ejs', { user_info: navbar_data.user_info }) %>
+  <%- rendered_include('views/zs_ask_question_modal.ejs', { user_info: navbar_data.user_info }) %>
+  <%- rendered_include('views/zs_missing_feature_modal.ejs', {}) %>
+</div>
+
+
+
+

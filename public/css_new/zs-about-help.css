@@ -1,0 +1,190 @@
+/*
+ * Zorsay-About-help v1.0.1 (http://www.zorsay.com)
+ * Copyright 2014 Zorsay, pvt ltd. 
+*/
+
+#zstour-wrap .row{
+	margin-right: -10px;
+	margin-left: -10px;
+}
+
+#zstour-wrap .zs-tour h1{
+	text-align: center;
+	margin-top: 0px;
+	font-size: 1.6em;
+	font-weight: bold; 
+	margin-bottom: 20px;
+	color: #337294;
+}
+
+.zs-team-member {
+ padding: 20px
+}
+
+#zstour-wrap #zs-tour{
+	margin-bottom: 25px;
+}
+
+.img-team {
+height: auto;
+width: 70%;
+margin-left: auto;
+margin-right: auto;
+margin-top: 10px;
+margin-bottom: 10px;
+border-radius: 7px 7px 7px 7px;
+border: solid 1px #CCC;
+
+}
+
+
+.abtzs-wrap h1{
+	font-size: 1.4em;
+	font-weight: bold;
+	margin-left: 5px;
+	margin-bottom: 0px;
+}
+
+.abtzs-wrap .panel-heading{
+	border-bottom: 0.1em solid #e3e3e3;
+	overflow: hidden;
+	margin-bottom: 5px;
+}
+
+.abtzs-wrap .panel-body{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.abtzs-wrap .row{
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.abtzs-wrap li > a, p > a{
+	text-decoration: underline;
+}
+
+.abtzs-wrap p > a:hover{
+	text-decoration: underline;
+	font-weight: normal;
+	color: #337294;
+}
+.abtzs-wrap li > a:hover{
+	text-decoration: underline;
+	font-weight: normal;
+	color: #337294;
+}
+
+#zstour-wrap .nav > li > a:hover, .nav > li > a:focus {
+text-decoration: none;
+background-color: #E5ECF3;
+}
+
+.zshelp-wrap h1{
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-left: 5px;
+	margin-bottom: 0px;
+	margin-top: 0px;	
+}
+
+.zshelp-wrap .panel-heading{
+	border-bottom: 0.1em solid #e3e3e3;
+	overflow: hidden;
+	margin-bottom: 15px;
+	padding-top: 0px;
+	color: #07c; /*#538dc2*/
+}
+
+.zshelp-wrap .panel-body{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.zshelp-wrap .panel-body p.zshelp-qn {
+	font-size: 1.2em;
+}
+
+.zshelp-wrap .row{
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.img-shopex{
+	border: solid 1px #CCC;
+	-moz-box-shadow: 5px 5px 0px #999;
+	-webkit-box-shadow: 5px 5px 0px #999;
+	box-shadow: 5px 5px 0px #999;
+	height: auto;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;	
+ }
+
+ #zsabt-shopex .row{
+ 	margin-bottom: 20px;
+ }
+
+  #zsabt-qna .row{
+ 	margin-bottom: 20px;
+ }
+
+/*TOS Styling Beging*/
+
+.zstos h1 {
+text-align: center;
+margin-top: 0px;
+font-size: 1.2em;
+font-weight: bold;
+margin-bottom: 5px;
+color: #337294;
+}
+
+.zstos-head .panel-heading {
+border-bottom: 0.1em solid #e3e3e3;
+overflow: hidden;
+margin-bottom: 5px;
+padding-top: 0px;
+}
+
+.zstos-head h1 {
+font-size: 1.2em;
+font-weight: bold;
+margin-bottom: 0px;
+margin-top: 0px;
+}
+
+#zstos-wrap .panel-body{
+	padding-left: 15px;
+	padding-right: 5px;
+}
+.panel-subheading {
+	margin-top: 5px;
+}
+
+.panel-subheading h1 {
+font-size: 1em;
+font-weight: bold;
+margin-bottom: 0px;
+margin-top: 0px;
+position: relative;
+display: inline-block;
+}
+
+.panel-subheading h4{
+	position: relative;
+	display: inline;
+	font-size: 1em;
+
+}
+
+.zstos-wrap li > a:hover{
+	text-decoration: underline;
+	font-weight: normal;
+	color: #337294;
+}
+
+/*TOS Styling Ends*/

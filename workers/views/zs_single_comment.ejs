@@ -1,0 +1,16 @@
+<section class="threaded-comments col-md-12 col-sm-12 col-xs-12">
+  <div class="comment-list col-md-12 col-sm-12 col-xs-12">
+    <div class="comment comment_list col-md-12 col-sm-12 col-xs-12">
+      <% if(hasValue(comment_data)) { %>
+        <div class="comment add-comment col-md-12 col-sm-12 col-xs-12" id="comms_<%=comment_data._id%>">
+          <%- rendered_include('views/zs_comment.ejs', {
+            comment_data: comment_data,
+            user_info: user_info,
+            loggedIn: loggedIn,
+            page_info: page_info,
+            }) %>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,295 @@
+<head>
+  <title> Share Your Shopping Experience | Zorsay </title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+
+<!-- Fixed toolbar -->
+<div class="navbar navbar-toolbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#userhome"><img title="zorsay" id="zorsay-sl" src="images/zorsay-sl.png"></a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">            
+        <li>
+            <a href="#reviews/all">Shopping Experiences 
+                <span class="badge btn-default">
+                    <% if (typeof(notif_count) != "undefined") {  %>
+                      <%= notif_count %>
+                    <% } else { %>
+                      new
+                    <% } %>
+                </span>
+            </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right dropdown">            
+        <!--<li><a href="#">Give us a Tip!</a></li>-->
+        <li class="dropdown">
+            <a href="#profile" class="dropdown-toggle" data-toggle="dropdown">
+                <% if (typeof(first_name) != "undefined") {  %>
+                  <%= first_name %>
+                <% } else { %>
+                  My Account
+                <% } %>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#profile">Profile</a></li>
+              <!-- <li><a href="#settings">Settings</a></li> -->
+              <li class="divider"></li>
+              <li><a href="#logout">Log Out</a></li>
+            </ul>
+        </li>
+
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Main component for a primary marketing message or call to action -->
+  <div class="jumbotron" style="margin-top: 55px;">
+    <!-- <h1>Write your Shopping Experience</h1> -->
+    <p>Rate & Comment on your online shopping experience.</p>      
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form class="form-horizontal" id="product-review-form" role="form">
+        <div class="form-group">
+          <h4><strong>Step 1:</strong> What and from which online store did you purchase the product?</h4>
+            <label for="text" class="col-sm-4 control-label" >What did you shop online? </label>
+              <div class="col-sm-10" style="float: left; width: 350px; margin-left: -10px; margin-bottom: 5px;">                     
+                <input type="text" class="psc_box form-control" placeholder="Product or Category name" name="pscategory" required autofocus> 
+              </div>    
+            <label for="text" class="col-sm-4 control-label">Which online store did you chose to buy this product? </label>
+              <div class="col-sm-10" style="float: left; width: 350px; margin-left: -10px; margin-bottom: 25px;">      
+                <input type="text" class="vendor_box form-control" name="vendor" placeholder="Online store name" required>
+              </div>          
+              <h4><strong>Step 2:</strong> Rate and comment on your recent online shopping experience.</h4>
+          
+              <dl class="zs-rating">
+            
+                <dt>On-Time Delivery </dt>
+                <dd id="rating1" name="otd_rating" rating="0">
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Worst</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Not Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Good</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Great</a></li>
+                </dd>
+                <div id="review-form-comments">
+                    <textarea class="form-control rating_comment" type="text" placeholder="Comment on Delivery" name="otd_comment" rows="1"></textarea>
+                    <!--<input class="rating_comment" type="text" placeholder="Comment on Delivery" name="otd_comment" maxlength="160"> -->
+                    <!-- <abbr class="char_remain" type="text" style="display:none;">137</abbr>                         -->
+                </div>                
+                <abbr class="char_remain" type="text" style="display:none;" id="comment-counter">137</abbr>
+                <br>
+                <br>
+
+                <dt>Product as described </dt>
+                <dd id="rating2" name="pad_rating" rating="0">
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Worst</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Not Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Good</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Great</a></li>
+                </dd>
+                <div id="review-form-comments">
+                    <textarea class="form-control rating_comment" type="text" placeholder="Comment on Product Received" name="pad_comment" rows="1"></textarea>
+                    <!--<input class="rating_comment" type="text" placeholder="Comment on Delivery" name="otd_comment" maxlength="160"> -->
+                    <!-- <abbr class="char_remain" style="display:none;">137</abbr>                         -->
+                </div>   
+                <abbr class="char_remain" type="text" style="display:none;" id="comment-counter">137</abbr>             
+                <br>
+                <br>
+
+                <dt>Pricing </dt>
+                <dd id="rating3" name="pri_rating" rating="0">
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Worst</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Not Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Good</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Great</a></li>
+                </dd>
+                <div id="review-form-comments">
+                    <textarea class="form-control rating_comment" type="text" placeholder="Comment on Pricing" name="pri_comment" rows="1"></textarea>
+                    <!--<input class="rating_comment" type="text" placeholder="Comment on Delivery" name="otd_comment" maxlength="160"> -->
+                    <!-- <abbr class="char_remain" style="display:none;">137</abbr>                         -->
+                </div>                
+                <abbr class="char_remain" type="text" style="display:none;" id="comment-counter">137</abbr>
+                <br>
+                <br>
+
+                <dt>Product Variety </dt>
+                <dd id="rating4" name="pro_rating" rating="0">
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Worst</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Not Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Good</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Great</a></li>
+                </dd>
+                <div id="review-form-comments">
+                    <textarea class="form-control rating_comment" type="text" placeholder="Comment on Product Variety" name="pro_comment" rows="1"></textarea>
+                    <!--<input class="rating_comment" type="text" placeholder="Comment on Delivery" name="otd_comment" maxlength="160"> -->
+                    <!-- <abbr class="char_remain" style="display:none;">137</abbr>                         -->
+                </div>                
+                <abbr class="char_remain" type="text" style="display:none;" id="comment-counter">137</abbr>
+                <br>
+                <br>
+
+                <dt>Ease of Shopping </dt>
+                <dd id="rating5" name="eos_rating" rating="0">
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Worst</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Not Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Good</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Great</a></li>
+                </dd>
+                <div id="review-form-comments">
+                    <textarea class="form-control rating_comment" type="text" placeholder="Comment on Website Navigation & Design" name="eos_comment" rows="1"></textarea>
+                    <!--<input class="rating_comment" type="text" placeholder="Comment on Delivery" name="otd_comment" maxlength="160"> -->
+                    <!-- <abbr class="char_remain" style="display:none;">137</abbr>                         -->
+                </div>                
+                <abbr class="char_remain" type="text" style="display:none;" id="comment-counter">137</abbr>
+                <br>
+                <br>
+
+                <dt>Customer Care </dt>
+                <dd id="rating6" name="csu_rating" rating="0">
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Worst</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Not Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Good</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Great</a></li>
+                </dd>
+                <div id="review-form-comments">
+                    <textarea class="form-control rating_comment" type="text" placeholder="Comment on Communications Received" name="csu_comment" rows="1"></textarea>
+                    <!--<input class="rating_comment" type="text" placeholder="Comment on Delivery" name="otd_comment" maxlength="160"> -->
+                    <!-- <abbr class="char_remain" style="display:none;">137</abbr>                         -->
+                </div>                
+                <abbr class="char_remain" type="text" style="display:none;" id="comment-counter">137</abbr>
+                <br>
+                <br>
+
+                <dt>Return & Refund Service </dt>
+                <dd id="rating7" name="rrp_rating" rating="0">
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Worst</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Not Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Good</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Great</a></li>
+                </dd>
+                <div id="review-form-comments">
+                    <textarea class="form-control rating_comment" type="text" placeholder="Comment on Return & Refund service" name="rrp_comment" rows="1"></textarea>
+                    <!--<input class="rating_comment" type="text" placeholder="Comment on Delivery" name="otd_comment" maxlength="160"> -->
+                    <!-- <abbr class="char_remain" style="display:none;">137</abbr>                         -->
+                </div>                
+                <abbr class="char_remain" type="text" style="display:none;" id="comment-counter">137</abbr>
+                <br>
+                <br> 
+
+                <div class="overall"></div>
+                <dt>Overall Rating </dt>
+                <dd id="rating8" name="all_rating" rating="0">
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Worst</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Not Bad</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Good</a></li>
+                  <li><a href="#" style="background-color: rgb(51, 51, 51);">Great</a></li>
+                </dd>               
+                <div id="col-md-1">
+                  <h3><span class="label label-default calc_rating" style="margin-left: 20px;"></span></h3>
+                </div>             
+                <br>
+                <br>
+
+              </dl>                 
+       
+            <h4><strong>Step 3:</strong> Write a detailed Shopping Experience.</h4>
+              <label for="text" class="col-sm-4 control-label" >Detailed Review </label>
+              <div class="col-sm-10" style="float: left; width: 550px; margin-left: -10px; margin-bottom: 5px;">
+                <textarea class="form-control review_box" type="text" placeholder=" Tell us more..." name="review_text" rows="5" required></textarea>
+              </div>  
+          </div>
+            <!-- checkbox -->
+            <!-- <div class="col-sm-10" style="float: left;"> -->
+
+              <!-- <label for="text" class="col-sm-4 control-label checkbox">
+                <input type="checkbox" name="anonymous" class="col-sm-4 form-control" id="anonReviewCheckbox"> Add anonymously
+              </label> -->
+
+            <!-- </div> -->
+            <!-- <label for="text" class="col-sm-4 control-label" >Detailed Review </label> -->
+
+          <div class="well" style="max-width: 260px; margin: 0 auto 20px;">
+            <!-- clear form on cancel button -->
+            <button type="button" id="cancel_button" class="btn btn-default btn-lg active">Cancel</button>
+            <button type="submit" class="btn btn-primary btn-lg active">Submit Review</button>
+            <div class="checkbox" style="margin-left: 40px;">
+              <label>
+                <input type="checkbox"> Submit Anonymously
+              </label>
+            </div>
+            <abbr style="display:inline-block;" class="review_submit_msg alert alert-success" id="review_submit_msg"></abbr>
+          </div>
+      </form>
+    </div>     
+  </div>                   
+</div> <!-- /container -->    
+
+<div class="container">
+<div class="jumbotron" style="margin-top: 55px; text-align: center;">
+  <p>Your Past Shopping Experiences</p>      
+</div>
+
+<!-- <div class="panel panel-default" style="margin-bottom: 40px;">
+  <div class="panel-body" style="width: 760px;">
+    <div class="row"> -->
+      <div class="review_list">
+      </div> <!-- review_list -->
+<!--     </div>
+  </div>
+</div> -->
+
+<div class="zs-fcontainer">
+  <footer>
+    <div class="zs-exfooter">        
+    <span class="links">          
+      <a class="btn btn-primary btn-sm" href="mailto:contact@zorsay.com" role="button">Contact Us</a>
+      <a class="btn btn-primary btn-sm" href="http://blog.zorsay.com/" role="button">Our Story</a>
+    </span>
+    <span class="icons">
+      <a target="_blank" href="https://www.facebook.com/say.zorsay">
+        <img width="32" height="32" src="images/icon_facebook_32.png" alt="f">
+      </a>   
+      <a target="_blank" href="#">
+        <img width="32" height="32" src="images/icon_twitter_32.png" alt="t">
+      </a>           
+    </span> 
+    </div>        
+  </footer> 
+</div>
+</div>
+
+
+
+<!-- Vendor list Online or Offline -->
+<ul class="vendor_list" />
+<!-- Product or Service Category List -->
+<ul class="psc_list" /> 
+<!-- <hr> -->
+<!-- <p><a href="#logout">Logout</a></p> -->
+<!-- <p><a href="#reviews/all">Check out <b>Shopping Experiences</b> of others</a></p> -->
+<!-- <hr> -->
+<!-- <legend>Your past <b>Shopping Experiences</b></legend> -->
+<!-- <ul class="review_list" /> -->
+

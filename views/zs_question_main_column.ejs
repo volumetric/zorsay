@@ -1,0 +1,37 @@
+<!-- Question main column begin -->
+<section id="main-content" class="col-md-9 col-sm-12 col-xs-12">
+  <!-- main content here -->              
+    <div class="row">
+      <!-- title begin -->
+      <div class="title-wrap hidden-xs">
+        <div class="col-md-6 col-sm-6 col-xs-6">
+          <ul class="nav navbar-nav nav-tabs-google">
+            <li><a href="/questions">ALL QUESTIONS</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 ">
+          <ul class="nav navbar-nav navbar-right  nav-tabs-google">
+            <li class="<%= list_order == "recent" ? "active" : "" %>"><a href="/questions/recent">Recent</a></li>
+            <li class="<%= list_order == "topvoted" ? "active" : "" %>"><a href="/questions/topvoted">Top Questions</a></li>
+            <!-- <li class="<%= list_order == "topanswers" ? "active" : "" %>"><a href="/questions/topanswers">Top Answers</a></li> -->
+            <li class="<%= list_order == "unanswered" ? "active" : "" %>"><a href="/questions/unanswered">Unanswered</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- title end -->
+    </div>
+
+    <section id="content" class="question_short_list" order="<%= list_order %>">
+      <%- rendered_include('views/zs_question_short_list.ejs', {question_list_data: question_main_column_data.question_list_data,
+        user_info: user_info,
+        loggedIn: loggedIn,
+        }) %>
+    </section>
+
+    <div class="content-wrap">
+      <button class="col-md-12 question-short-load-more">Load More Questions</button>        
+    </div>
+
+</section>
+
+<!-- Question main column end -->

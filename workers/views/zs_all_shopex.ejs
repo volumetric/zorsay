@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include zs_head_meta.ejs %>
+
+  <head>
+    <title>Zorsay | Read Online Shopping Experiences in India</title>
+  </head>
+
+  <body>
+    <!-- ZS all Shopex Page begin -->
+    <section id="zs-all-shopex-page">
+
+      <% /*console.log(all_shopex_data.shopex_main_column_data)*/ %>
+
+      <!-- ZS Fixed navbar begin -->
+      <%//- include zs_navbar.ejs %>
+      <%//- rendered_include('views/zs_navbar.ejs', {navbar_data: navbar_data}) %>
+      <%- rendered_include('views/zs_navbar.ejs', {navbar_data: all_shopex_data.navbar_data}) %>
+      <%//- rendered_include('views/zs_navbar.ejs', {navbar_data: {user_info: {name: {first: "Vinit", last: "Agrawal"}, pub_id: 13731 }, }, }) %>
+
+      <div class="container">
+
+        <!-- ZS top header begin -->
+        <%- include zs_top_header.ejs %>
+        <!-- ZS top header end -->
+
+        <!-- ZS all shopex listing begin -->
+        <section id="all-shopex">   
+          <div class="alert alert-zs alert-dismissable hidden-xs">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>New to Zorsay!</strong>
+              Zorsay is the fun and easy way to discover, rate and talk about online shopping in India. 
+              <a href="/tour" class="zs-defaultbtn pull-right">Take Tour</a>
+          </div>
+
+          <!-- Shopex main row begin -->
+          <div class="row">
+            <!-- Shopex main column begin -->
+            <%//- include zs_shopex_main_column.ejs %>
+            <%- rendered_include('views/zs_shopex_main_column.ejs', {shopex_main_column_data: all_shopex_data.shopex_main_column_data}) %>
+            <!-- Shopex main column end -->
+
+            <!-- Shopex right sidebar begin -->
+            <%- include zs_right_sidebar.ejs %>
+            <!-- Shopex right sidebar end -->            
+          </div>
+          <!-- Shopex main row end -->
+        </section>
+        <!-- ZS all shopex listing end -->
+      </div>
+      <!-- div class="container" end -->
+    </section>
+    <!-- section id="zs-all-shopex-page" end -->
+    
+    <%//- include zs_end_footer.ejs %>
+    <!-- ZS all Shopex Page end -->
+
+    <%- include zs_login_modal.ejs %>
+    <%- include zs_register_modal.ejs %>
+    <%- include zs_forgot_password_modal.ejs %>
+
+    <!-- start loading and running the scripts -->
+    <script data-main="/js/zs_all_shopex_page" type="text/javascript" src="/js/libs/require.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,171 @@
+
+
+  <%/* var sample_info_object_str = '{  "title": "Info",  "content": [    {      "title": "Features & Policy",      "content": [        {          "title": "Return Item",          "content": "<b>Sample Text.</b> <hr> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.<br>",          "js": "",        },        {          "title": "Refund",          "content": "<b>Another Sample Text.</b> <hr> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text.<br>",          "js": "",        },      ],    },    {      "title": "Delivery",      "content": [        {          "title": "Delivery Charges",          "content": "<b>Sample Text.</b> <hr> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.<br>",          "js": "",        },        {          "title": "Shipping Speed",          "content": "<b>Another Sample Text.</b> <hr> There are many variations of passages of Lorem Ipsum available.<br>",          "js": "",        },        {          "title": "Eligibility",          "content": "<b>A Map html</b> <hr> Along with a text input for pincode search for delivery Eligibility. <br>",          "js": "some js for map script and pincode based search to operate",        },      ],    },  ]}' */%>
+
+<% /*var sample_info_object = {"title":"Info","content":[{"title":"Features & Policy","content":[{"title":"Payment Methods","content":"Coming Soon"}, {"title":"Return Procedure","content":"<b>Sample Text.</b>  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.<br>","js":"s"},{"title":"Refund Policy","content":"<b>Another Sample Text.</b>  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.<br>","js":"s"}]},{"title":"Delivery","content":[{"title":"Delivery Charges","content":"<b>Sample Text.</b>  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br>","js":"s"},{"title":"Shipping Speed","content":"<b>Another Sample Text.</b>  There are many variations of passages of Lorem Ipsum available.<br>","js":"s"},{"title":"Delivery Locations","content":"<b>A Map html</b>  Along with a text input for pincode search for delivery Eligibility. <br>","js":"some js for map script and pincode based search to operate"}]}]} */%>
+
+<% var sample_info_object = {"title":"Info","content":[{"title":"Features & Policy","content":[{"title":"Payment Methods","content":"Coming Soon"}, {"title":"Return Procedure","content":"<b>Coming Soon</b>", "js": ""},{"title":"Refund Policy","content":"<b>Coming Soon</b>","js":""}]},{"title":"Delivery","content":[{"title":"Delivery Charges","content":"<b>Coming Soon</b>","js":""},{"title":"Shipping Speed","content":"<b>Coming Soon</b>","js":""},{"title":"Delivery Locations","content":"<b>Coming Soon</b>","js":""}]}]} %>
+
+<% /*var sample_info_object = {"title": "Info","content": []}*/ %>
+
+<% var sample_info_object_str = JSON.stringify(sample_info_object) %>
+
+<% var seller_type_name = "seller"; %>
+
+
+<% var seller_permalink = seller_data.permalink ? seller_data.permalink : "/"+ seller_type_name +"/"+seller_data._id+"/"+seller_data.url_name;%>
+
+<section id="main-content" class="panel col-md-12 col-sm-12 col-xs-12">
+  <div class="zs-node-cover col-md-12 col-sm-12 col-xs-12">
+    <section id="pc-panel">            
+        <div class="pc-navwrap" style="background-image: url('/img/newsellercover.jpg');">
+
+          <div class="col-md-2 col-sm-4 col-xs-6">
+            <div class="pc-pic">
+              <a href="<%= seller_permalink %>">
+                <img src="<%= seller_data.profile_image_url ? seller_data.profile_image_url : "/img/newseller.jpg" %>" alt="<%= seller_data.name %>">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-4 col-xs-2">
+            <div class="pc-info">
+              <a href="<%= seller_permalink %>"><h1><%= seller_data.name %></h1></a>
+            </div>                    
+          </div>
+
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <div class="pc-follow-stat">
+              <div data-toggle="buttons">
+                <div class="mini-followers">
+                <a><%= seller_data.meta_info.followers.length %> </a><span>Followers</span>
+              </div> 
+                <label class="btn btn-follow pending-feature">
+                <input type="checkbox"> Follow 
+                </label>                      
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </section>
+  </div>
+
+  <div class="zs-node-navbar col-md-12 col-sm-12 col-xs-12 cat-home">
+    <nav class="navbar navbar-toolbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".pc-toolbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         <!--  <a class="navbar-brand" href="#" class="navbar-brand">Myntra.com</a>  -->         
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pc-toolbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a class="node-nav-link" href="<%= seller_data.store_url ? seller_data.store_url : seller_permalink %>" target="_blank" rel="nofollow"><%= seller_data.name %></a></li>
+            <li><a class="node-nav-link" href="<%= seller_permalink + '/questions'%>">Questions</a></li>
+            <li><a class="node-nav-link" href="<%= seller_permalink + '/shopping-experiences'%>">Shopping Experiences</a></li>
+            <!-- <li><a class="node-nav-link" href="<%= seller_permalink + '/info'%>">Seller Info</a></li> -->
+          </ul>            
+          <ul class="nav navbar-nav navbar-right">
+            <li><a>Favorites: <%= seller_data.meta_info.favors.length %></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+
+  <!-- ######## CONTENT START ######### -->
+
+  <!-- Content start -->
+  <div class="zs-node-content col-md-12 col-sm-12 col-xs-12">
+    <section id="info">
+      <div class="info">
+
+        <div class="col-md-3 col-sm-3 hidden-xs">
+          <div class="info-sidebar hidden-print" role="complementary">
+            
+            <ul class="nav info-sidenav bs-docs-sidenav affix-top" id="zs_sidebar_nav">
+
+              <% for (var i = 0; i < sample_info_object.content.length; ++i) { 
+                var d = sample_info_object.content[i];
+              %>
+                <li class="list-group-header"><a><%=d.title%></a>
+                  <ul class="nav">
+                    <% for (var j = 0; j < d.content.length; ++j) {
+                      var dd = d.content[j];
+                    %>
+                      <li class="list-group-item"><a href="#<%=d.title.trim().replace(/\s+/g, "-").replace(/[^-a-zA-Z0-9]+/g,"")%>__<%=dd.title.trim().replace(/\s+/g, "-").replace(/[^-a-zA-Z0-9]+/g,"")%>"><%=dd.title%></a></li>
+                    <% } %>
+                  </ul>
+                </li>
+              <% } %>
+             
+             <!--  <li class="list-group-header active"><a href="#features-&amp;-policy">FEATURES &amp; POLICY</a>
+                <ul class="nav">
+                  <li class="list-group-item active"><a href="#cash-on-delivery">Cash on Delivery</a></li>
+                  <li class="list-group-item"><a href="#return-item">Return Item</a></li>
+                  <li class="list-group-item"><a href="#refund">Refund</a></li>
+                  <li class="list-group-item"><a href="#cancellation">Cancellation</a></li>
+                  <li class="list-group-item"><a href="#fulfilled-by-amazon">Fulfilled by Amazon</a></li>
+                  <li class="list-group-item"><a href="#fulfilled-by-seller">Fulfilled by Seller</a></li>
+                  <li class="list-group-item"><a href="#purchase-protection">100% Purchase Protection</a></li>                    
+                </ul>
+              </li>
+
+              <li class="list-group-header"><a href="#delivery">DELIVERY</a>
+                <ul class="nav">
+                  <li class="list-group-item"><a href="#delivery-charges">Delivery Charges</a></li>
+                  <li class="list-group-item"><a href="#shipping-speed">Shipping Speed</a></li>
+                  <li class="list-group-item"><a href="#eligibility">Eligibility</a></li>
+                </ul>
+              </li> -->
+
+            </ul>
+
+          </div>            
+        </div>
+
+        <!-- Main info content Start -->
+        <div class="col-md-9 col-sm-9 col-xs-12">
+
+          <% for (var i = 0; i < sample_info_object.content.length; ++i) { 
+                var d = sample_info_object.content[i];
+          %>
+            <div class="info-content">
+              <h1 id="<%=d.title%>" class="page-header"><%=d.title%></h1>
+                <% for (var j = 0; j < d.content.length; ++j) {
+                  var dd = d.content[j];
+                %>
+                  <h2 class="zs-hashed-target-offset" id="<%=d.title.trim().replace(/\s+/g, "-").replace(/[^-a-zA-Z0-9]+/g,"")%>__<%=dd.title.trim().replace(/\s+/g, "-").replace(/[^-a-zA-Z0-9]+/g,"")%>"><%=dd.title%></h2>
+                  <!-- <p><%/*=dd.title*/%></p> -->
+                  <div class="sub-header"><%-dd.content%></div>
+                  <hr>
+                <% } %>
+                <hr>
+            </div>
+          <% } %>
+
+          <!-- <div class="info-content">
+            <h1 id="features-&amp;-policy" class="page-header">Features &amp; Policy</h1>
+              
+              <h2 id="cash-on-delivery" class="sub-header">Cash on Delivery</h2>
+              <p>Sample Text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+
+              <h2 id="return-item" class="sub-header">Cash on Delivery</h2>
+              <p>Another Sample Text. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+          </div> -->
+
+
+        </div>
+        <!-- Main info content End -->
+      </div>
+    </section>
+  </div>
+</section>
