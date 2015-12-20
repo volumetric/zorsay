@@ -1,5 +1,5 @@
 {
-  "name": "my-social-network",
+  "name": "zorsay",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -17,5 +17,27 @@
     "raw-body": "1.1.4",
     "re-captcha": "0.0.3",
     "request": ">= 2.34.0"
-  }
+  },
+  "description": "A Question and Answering Platform build in Node.js",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volumetric/zorsay.git"
+  },
+  "keywords": [
+    "question",
+    "answer",
+    "q&a",
+    "forum"
+  ],
+  "author": "Vinit Agrawal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volumetric/zorsay/issues"
+  },
+  "homepage": "https://github.com/volumetric/zorsay#readme"
 }
