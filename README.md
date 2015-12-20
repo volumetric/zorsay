@@ -7,4 +7,4 @@ Explain the process of initializing the application
 
 Add automatic DB initialization script
 
-Wrtie Documentation
+Write Documentation
