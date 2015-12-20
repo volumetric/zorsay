@@ -398,5 +398,5 @@ fs.readdirSync('routes').forEach(function(file) {
 });
 
 
-app.listen(process.env.PORT || 8080);
-console.log("ZorSay listening on port process.env.PORT or else 8080.");
+app.listen(process.env.PORT || 8087);
+console.log("ZorSay listening on port process.env.PORT or else 8087.");
