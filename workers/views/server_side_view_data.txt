@@ -1,8 +1,0 @@
-all_shopex_data
-	navbar_data
-		user_info_data
-	top_header_data
-	shopex_main_column_data
-		shopex_list_data = [shopex_data]
-	right_sidebar_data
-	end_footer_data

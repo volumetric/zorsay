@@ -1,9 +1,0 @@
-<%/* console.log(user_list_data) */%>
-<% for(var i = 0; i < user_list_data.length; ++i) { %>
-	<!-- user short begin -->
-	<%- rendered_include('views/zs_user_short.ejs', {user_data: user_list_data[i],
-		user_info: user_info,
-		loggedIn: loggedIn,
-		}) %>
-	<!-- user short end -->
-<% } %>
