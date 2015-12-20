@@ -1,4 +1,4 @@
-# zorsay
+# Zorsay
 A Question and Answering Platform build in Node.js
 
 #TODO
